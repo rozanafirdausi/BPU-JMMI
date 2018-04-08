@@ -24,10 +24,16 @@ Route::get('/user', 'PagesController@user');
 Route::get('/adminJadwal', 'JadwalController@admin');
 Route::get('/userJadwal', 'JadwalController@user');
 
-
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/login', function () {
+    return view('signup.index');
+});
+
+Route::get('/keuangan', function () {
+    return view('admin.keuangan.keuangan');
 
 Route::get('/signupuser', function () {
     return view('signup.indexuser');
@@ -35,4 +41,5 @@ Route::get('/signupuser', function () {
 
 Route::get('/signupadmin', function () {
     return view('signup.indexadmin');
+
 });
