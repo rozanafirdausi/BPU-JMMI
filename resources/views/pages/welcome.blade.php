@@ -63,8 +63,8 @@
         <h1>Sistem Informasi Manajemen Lembaga Bantuan Sosial</h1>
         <h2>Created By: <span class="rotating">Damai Marisa B. , Hidayatul Munawaroh , Rozana Firdausi</span></h2>
         <div class="actions">
-          <a href="login" class="btn-get-started">ADMIN</a>
-          <a href="login" class="btn-services">USER</a>
+          <a href="signupadmin" class="btn-get-started">ADMIN</a>
+          <a href="signupuser" class="btn-services">USER</a>
         </div>
       </div>
     </div>
