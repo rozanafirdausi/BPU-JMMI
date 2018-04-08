@@ -75,7 +75,7 @@
         <div class="col-md-12">
           <h3 class="section-title">Menu Admin</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+          <p class="section-description">Atlalallalal vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
         </div>
       </div>
 
