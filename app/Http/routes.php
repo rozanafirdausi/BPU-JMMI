@@ -27,3 +27,7 @@ Route::get('/about', function () {
 Route::get('/login', function () {
     return view('signup.index');
 });
+
+Route::get('/keuangan', function () {
+    return view('admin.keuangan.keuangan');
+});
