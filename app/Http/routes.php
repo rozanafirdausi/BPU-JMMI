@@ -17,7 +17,12 @@
 Route::get('/', 'PagesController@homepage');
 
 Route::post('/admin', 'PagesController@admin');
+
 Route::post('/user', 'PagesController@user');
+
+Route::get('/user', 'PagesController@user');
+Route::get('/adminJadwal', 'JadwalController@admin');
+Route::get('/userJadwal', 'JadwalController@user');
 
 
 Route::get('/about', function () {
