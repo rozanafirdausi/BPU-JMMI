@@ -52,18 +52,18 @@
           <a class="navbar-brand" href="#">BPU - JMMI</a>
         </div>
         <ul class="nav navbar-nav">
-          <li><a href="menu-admin.html">Home</a></li>
+          <li><a href="admin">Home</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"">Keuangan <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="laporan-keuangan.html">Laporan Keuangan</a></li>
-              <li><a href="penjualan.html">Penjualan</a></li>
-              <li><a href="bantuan.html">Bantuan</a></li>
+              <li><a href="keuangan">Laporan Keuangan</a></li>
+              <li><a href="penjualan">Penjualan</a></li>
+              <li><a href="bantuan">Bantuan</a></li>
             </ul>
           </li>
-          <li><a href="barang.html">Barang</a></li>
-          <li><a href="absensi.html">Absensi</a></li>
-          <li><a href="desaBinaan.html">Desa Binaan</a></li>
-          <li class="test"><a href="jadwal-mengajar.html">Jadwal Mengajar</a></li>
+          <li><a href="barang">Barang</a></li>
+          <li><a href="absensi">Absensi</a></li>
+          <li><a href="desaBinaan">Desa Binaan</a></li>
+          <li class="test"><a href="adminJadwal">Jadwal Mengajar</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>

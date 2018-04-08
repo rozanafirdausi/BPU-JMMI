@@ -17,6 +17,7 @@
 Route::get('/', 'PagesController@homepage');
 
 Route::post('/admin', 'PagesController@admin');
+Route::get('/admin', 'PagesController@admin');
 
 Route::post('/user', 'PagesController@user');
 
