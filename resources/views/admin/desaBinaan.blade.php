@@ -74,7 +74,7 @@
 <body>
   <div id="preloader"></div>
   <div class="container fluid">
-    <h1>Keuangan BPU - JMMI 2018</h1>
+    <h1>Data Desa Binaan BPU - JMMI 2018</h1>
     <div class="col-sm-12">
       <div class="panel panel-default panel-table" id="table">
         <div class="panel-heading">
@@ -83,7 +83,6 @@
             </div>
             <div class="col col-xs-6 text-right">
               <button type="button" class="btn btn-sm btn-primary btn-create" data-toggle="modal" data-target="#add-modal">Create New</button>
-              <button type="button" class="btn btn-sm btn-primary btn-create">Download</button>
             </div>
           </div>
         </div>
@@ -92,7 +91,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel">Tambah Rincian Keuangan</h3>
+                <h3 class="modal-title" id="exampleModalLabel">Tambah Desa Binaan</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -100,28 +99,28 @@
               <div class="modal-body">
                 <form>
                     <div class="form-group">
-                      <label for="tanggal">Tanggal : </label>
-                      <input type="text" class="form-control" id="tanggal" placeholder="masukkan tanggal..">
+                      <label for="tanggal">ID : </label>
+                      <input type="text" class="form-control" id="tanggal" placeholder="masukkan ID">
                     </div>
                     <div class="form-group">
-                      <label for="item">Item Pemasukan/Pengeluaran : </label>
-                      <input type="text" class="form-control" id="item" placeholder="masukkan item pemasukan/pengeluaran..">
+                      <label for="item">Nama Desa Binaan : </label>
+                      <input type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan">
                     </div>
                     <div class="form-group">
-                      <label for="debit">Debit : </label>
-                      <input type="text" class="form-control" id="debit" placeholder="masukkan jumlah debit..">
+                      <label for="debit">Alamat Desa Binaan : </label>
+                      <input type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan">
                     </div>
                     <div class="form-group">
-                      <label for="kredit">Kredit : </label>
-                      <input type="text" class="form-control" id="kredit" placeholder="masukkan jumlah kredit..">
+                      <label for="kredit">CP : </label>
+                      <input type="text" class="form-control" id="kredit" placeholder="masukkan nama cp">
                     </div>
                     <div class="form-group">
-                      <label for="jumlah-uang">Jumlah Uang : </label>
-                      <input type="text" class="form-control" id="jumlah-uang" placeholder="masukkan jumlah uang..">
+                      <label for="jumlah-uang">Telp CP : </label>
+                      <input type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp">
                     </div>
                     <div class="form-group">
-                      <label for="keterangan">Keterangan : </label>
-                      <input type="text" class="form-control" id="keterangan" placeholder="masukkan keterangan..">
+                      <label for="keterangan">Jumlah Warga : </label>
+                      <input type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga">
                     </div>
                 </form>
               </div>
@@ -137,12 +136,12 @@
             <thead>
               <tr>
                   <th><em class="fa fa-cog"></em></th>
-                  <th>Tanggal</th>
-                  <th>Item Pemasukan / Pengeluaran</th>
-                  <th>Debit</th>
-                  <th>Kredit</th>
-                  <th>Jumlah Uang</th>
-                  <th>Keterangan</th>
+                  <th>ID</th>
+                  <th>Nama Desa Binaan</th>
+                  <th>Alamat Desa Binaan</th>
+                  <th>CP</th>
+                  <th>Telp CP</th>
+                  <th>Jumlah Warga</th>
               </tr> 
             </thead>
             <tbody>
@@ -151,36 +150,36 @@
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>1/4/2018</td>
-                <td>Modal awal</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Rp 0,-</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Kas Pengurus</td>
+                <td>1</td>
+                <td>Keputih</td>
+                <td>Keputih, Surabaya, Jawa Timur</td>
+                <td>Ojan</td>
+                <td>082567453980</td>
+                <td>120</td>
               </tr>
               <tr>
                 <td align="center">
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>1/4/2018</td>
-                <td>Modal awal</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Rp 0,-</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Kas Pengurus</td>
+                <td>2</td>
+                <td>Kejawan</td>
+                <td>Kejawan, Surabaya, Jawa Timur</td>
+                <td>Mar</td>
+                <td>087654321876</td>
+                <td>90</td>
               </tr>
               <tr>
                 <td align="center">
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>1/4/2018</td>
-                <td>Modal awal</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Rp 0,-</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Kas Pengurus</td>
+                <td>3</td>
+                <td>Gebang</td>
+                <td>Gebang, Surabaya, Jawa Timur</td>
+                <td>Hida</td>
+                <td>089789678567</td>
+                <td>110</td>
               </tr>
             </tbody>
           </table>

@@ -37,8 +37,6 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
-  
-
   <!-- =======================================================
     Theme Name: Imperial
     Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
@@ -48,21 +46,28 @@
 </head>
 <body>
   <header id="header">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <a href="#hero" style="font-size: 40px">BPU-JMMI<img src="" alt="" title="BPU-JMMI" /></img></a>
-        <!-- Uncomment below if you prefer to use a text image -->
-        <!--<h1><a href="#hero">Header 1</a></h1>-->
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="#contact">Log Out</a></li>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">BPU - JMMI</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="menu-admin.html">Home</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"">Keuangan <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="laporan-keuangan.html">Laporan Keuangan</a></li>
+              <li><a href="penjualan.html">Penjualan</a></li>
+              <li><a href="bantuan.html">Bantuan</a></li>
+            </ul>
+          </li>
+          <li><a href="barang.html">Barang</a></li>
+          <li><a href="absensi.html">Absensi</a></li>
+          <li><a href="desaBinaan.html">Desa Binaan</a></li>
+          <li class="test"><a href="jadwal-mengajar.html">Jadwal Mengajar</a></li>
         </ul>
-      </nav>
-      <!-- #nav-menu-container -->
-    </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
   </header>
   
 <body>
@@ -72,7 +77,7 @@
   Services Section
   ============================-->
   <section id="services">
-    
+  	
   </section>
 
   <!--==========================

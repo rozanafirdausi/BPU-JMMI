@@ -46,21 +46,18 @@
 </head>
 <body>
   <header id="header">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <a href="#hero" style="font-size: 40px">BPU-JMMI<img src="" alt="" title="BPU-JMMI" /></img></a>
-        <!-- Uncomment below if you prefer to use a text image -->
-        <!--<h1><a href="#hero">Header 1</a></h1>-->
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="#contact">Log Out</a></li>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">BPU - JMMI</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="menu-admin.html">Home</a></li>
+          <li class="test"><a href="jadwal-mengajar.html">Jadwal Mengajar</a></li>
         </ul>
-      </nav>
-      <!-- #nav-menu-container -->
-    </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
   </header>
   
 <body>

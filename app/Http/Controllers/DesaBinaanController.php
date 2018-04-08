@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class BarangController extends Controller
+class DesaBinaanController extends Controller
 {
     public function index()
     {
-    	return view('admin.barang');
+    	return view('admin.desaBinaan');
     } 
 }
