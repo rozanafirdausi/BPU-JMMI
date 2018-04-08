@@ -34,6 +34,7 @@ Route::get('/login', function () {
 
 Route::get('/keuangan', function () {
     return view('admin.keuangan.keuangan');
+});
 
 Route::get('/signupuser', function () {
     return view('signup.indexuser');
