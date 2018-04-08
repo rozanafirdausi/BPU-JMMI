@@ -82,7 +82,7 @@
       <div class="row">
         <div class="col-md-4 service-item">
           <div class="service-icon"><i class="fa fa-money"></i></div>
-          <h4 class="service-title"><a href=""><br>Keuangan</a></h4>
+          <h4 class="service-title"><a href="keuangan"><br>Keuangan</a></h4>
           <!-- <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p> -->
         </div>
         <div class="col-md-4 service-item">
