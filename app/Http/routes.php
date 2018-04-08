@@ -36,6 +36,14 @@ Route::get('/keuangan', function () {
     return view('admin.keuangan.keuangan');
 });
 
+Route::get('/bantuan', function () {
+    return view('admin.keuangan.bantuan');
+});
+
+Route::get('/penjualan', function () {
+    return view('admin.keuangan.penjualan');
+});
+
 Route::get('/signupuser', function () {
     return view('signup.indexuser');
 });
