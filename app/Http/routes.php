@@ -27,6 +27,8 @@ Route::get('/userJadwal', 'JadwalController@user');
 Route::get('/absensi', 'AbsensiController@index');
 Route::get('/barang', 'BarangController@index');
 Route::get('/desaBinaan', 'DesaBinaanController@index');
+Route::get('/keuangan', 'KeuanganController@index');
+Route::post('/keuangan', 'KeuanganController@store');
 
 Route::get('/about', function () {
     return view('about');
@@ -36,16 +38,13 @@ Route::get('/login', function () {
     return view('signup.index');
 });
 
-Route::get('/keuangan', function () {
-    return view('admin.keuangan.keuangan');
-});
 
 Route::get('/bantuan', function () {
-    return view('admin.keuangan.bantuan');
+    return view('admin.bantuan.bantuan');
 });
 
 Route::get('/penjualan', function () {
-    return view('admin.keuangan.penjualan');
+    return view('admin.penjualan.penjualan');
 });
 
 Route::get('/signupuser', function () {
@@ -55,4 +54,3 @@ Route::get('/signupuser', function () {
 Route::get('/signupadmin', function () {
     return view('signup.indexadmin');
 });
-

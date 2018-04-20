@@ -81,30 +81,40 @@
 
       <div class="row">
         <div class="col-md-4 service-item">
+          <a href="keuangan">
           <div class="service-icon"><i class="fa fa-money"></i></div>
-          <h4 class="service-title"><a href="keuangan"><br>Keuangan</a></h4>
+          <h4 class="service-title"><br>Keuangan</h4>
+          </a>
           <!-- <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p> -->
         </div>
         <div class="col-md-4 service-item">
+          <a href="barang">
           <div class="service-icon"><i class="fa fa-shopping-bag"></i></div>
-          <h4 class="service-title"><a href=""><br>Barang</a></h4>
+          <h4 class="service-title"><br>Barang</h4>
+          </a>
           <!-- <p class="service-description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p> -->
         </div>
         <div class="col-md-4 service-item">
+          <a href="absensi">
           <div class="service-icon"><i class="fa fa-file"></i></div>
-          <h4 class="service-title"><a href=""><br>Absensi</a></h4>
+          <h4 class="service-title"><br>Absensi</h4>
+          </a>
           <!-- <p class="service-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p> -->
         </div>
         <div class="col-md-4 service-item">
+          <a href="desaBinaan">
           <div class="service-icon"><i class="fa fa-users"></i></div>
-          <h4 class="service-title"><a href=""><br>Desa Binaan</a></h4>
+          <h4 class="service-title"><br>Desa Binaan</h4>
+          </a>
           <!-- <p class="service-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p> -->
         </div>
         <div class="col-md-4 service-item">
+          <a href="adminJadwal">
           <div class="service-icon"><i class="fa fa-calendar"></i></div>
-          <h4 class="service-title"><a href=""><br>Jadwal Mengajar</a></h4>
+          <h4 class="service-title"><br>Jadwal Mengajar</h4>
+          </a>
           <!-- <p class="service-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p> -->
-        </div>
+        </div></a>
       </div>
     </div>
   </section>
