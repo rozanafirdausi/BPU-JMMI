@@ -97,7 +97,9 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                <form action="{{ action('BarangController@store') }}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
                       <label for="tanggal">ID : </label>
                       <input type="text" class="form-control" id="tanggal" placeholder="masukkan ID">
@@ -118,12 +120,12 @@
                       <label for="jumlah-uang">Stok : </label>
                       <input type="text" class="form-control" id="jumlah-uang" placeholder="masukkan stok">
                     </div>
-                </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
               </div>
+              </form>
             </div>
           </div>
         </div>

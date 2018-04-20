@@ -9,7 +9,7 @@ class JadwalController extends Controller
 {
     public function admin()
     {
-    	return view('admin.adminJadwal');
+    	return view('jadwalMengajar.adminJadwal');
     }  
 
     public function user()

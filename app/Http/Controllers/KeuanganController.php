@@ -10,13 +10,12 @@ class KeuanganController extends Controller
 {
 	public function index()
     {
-    	return view('admin.keuangan.keuangan');
+    	return view('keuangan.keuangan');
     }   
 
     public function store(Request $request)
     {
-    	// $data = $request->all();
-    	// dd($data);
-    	return view('admin.keuangan.form');
+    	$data = $request->all();
+    	dd($data);
     }
 }

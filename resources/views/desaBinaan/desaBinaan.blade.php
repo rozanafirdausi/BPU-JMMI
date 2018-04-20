@@ -74,7 +74,7 @@
 <body>
   <div id="preloader"></div>
   <div class="container fluid">
-    <h1>Bantuan BPU - JMMI 2018</h1>
+    <h1>Data Desa Binaan BPU - JMMI 2018</h1>
     <div class="col-sm-12">
       <div class="panel panel-default panel-table" id="table">
         <div class="panel-heading">
@@ -91,35 +91,46 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel">Tambah Rincian Bantuan</h3>
+                <h3 class="modal-title" id="exampleModalLabel">Tambah Desa Binaan</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                <form action="{{ action('DesaBinaanController@store') }}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="nama">Nama Donatur : </label>
-                      <input type="text" class="form-control" id="nama" placeholder="masukkan nama donatur..">
+                      <label for="tanggal">ID : </label>
+                      <input type="text" class="form-control" id="tanggal" placeholder="masukkan ID">
                     </div>
                     <div class="form-group">
-                      <label for="waktu">Waktu Donasi : </label>
-                      <input type="text" class="form-control" id="waktu" placeholder="masukkan waktu donasi..">
+                      <label for="item">Nama Desa Binaan : </label>
+                      <input type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan">
                     </div>
                     <div class="form-group">
-                      <label for="jenis">Jenis Donasi : </label>
-                      <input type="text" class="form-control" id="jenis" placeholder="masukkan jneis donasi..">
+                      <label for="debit">Alamat Desa Binaan : </label>
+                      <input type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan">
                     </div>
                     <div class="form-group">
-                      <label for="jumlah">Jumlah Donasi : </label>
-                      <input type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi..">
+                      <label for="kredit">CP : </label>
+                      <input type="text" class="form-control" id="kredit" placeholder="masukkan nama cp">
                     </div>
-                  </form>
+                    <div class="form-group">
+                      <label for="jumlah-uang">Telp CP : </label>
+                      <input type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp">
+                    </div>
+                    <div class="form-group">
+                      <label for="keterangan">Jumlah Warga : </label>
+                      <input type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga">
+                    </div>
+                
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -128,10 +139,12 @@
             <thead>
               <tr>
                   <th><em class="fa fa-cog"></em></th>
-                  <th>Nama Donatur</th>
-                  <th>Waktu Donasi</th>
-                  <th>Jenis Donasi</th>
-                  <th>Jumlah Donasi</th>
+                  <th>ID</th>
+                  <th>Nama Desa Binaan</th>
+                  <th>Alamat Desa Binaan</th>
+                  <th>CP</th>
+                  <th>Telp CP</th>
+                  <th>Jumlah Warga</th>
               </tr> 
             </thead>
             <tbody>
@@ -140,30 +153,36 @@
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>John Doe</td>
-                <td>1 April 2018</td>
-                <td>Uang</td>
-                <td>Rp 1.000.000,-</td>
+                <td>1</td>
+                <td>Keputih</td>
+                <td>Keputih, Surabaya, Jawa Timur</td>
+                <td>Ojan</td>
+                <td>082567453980</td>
+                <td>120</td>
               </tr>
               <tr>
                 <td align="center">
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>John Doe</td>
-                <td>1 April 2018</td>
-                <td>Uang</td>
-                <td>Rp 1.000.000,-</td>
+                <td>2</td>
+                <td>Kejawan</td>
+                <td>Kejawan, Surabaya, Jawa Timur</td>
+                <td>Mar</td>
+                <td>087654321876</td>
+                <td>90</td>
               </tr>
               <tr>
                 <td align="center">
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>John Doe</td>
-                <td>1 April 2018</td>
-                <td>Uang</td>
-                <td>Rp 1.000.000,-</td>
+                <td>3</td>
+                <td>Gebang</td>
+                <td>Gebang, Surabaya, Jawa Timur</td>
+                <td>Hida</td>
+                <td>089789678567</td>
+                <td>110</td>
               </tr>
             </tbody>
           </table>

@@ -10,6 +10,12 @@ class DesaBinaanController extends Controller
 {
     public function index()
     {
-    	return view('admin.desaBinaan');
+    	return view('desaBinaan.desaBinaan');
     } 
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        dd($data);
+    }
 }

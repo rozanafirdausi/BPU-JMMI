@@ -10,6 +10,12 @@ class AbsensiController extends Controller
 {
     public function index()
     {
-    	return view('admin.absensi');
+    	return view('absensi.absensi');
     } 
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        dd($data);
+    }
 }

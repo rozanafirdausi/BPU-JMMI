@@ -10,6 +10,12 @@ class BarangController extends Controller
 {
     public function index()
     {
-    	return view('admin.barang');
+    	return view('barang.barang');
     } 
+
+    public function store(Request $request)
+    {
+    	$data = $request->all();
+        dd($data);
+    }
 }

@@ -74,7 +74,7 @@
 <body>
   <div id="preloader"></div>
   <div class="container fluid">
-    <h1>Penjualan BPU - JMMI 2018</h1>
+    <h1>Bantuan BPU - JMMI 2018</h1>
     <div class="col-sm-12">
       <div class="panel panel-default panel-table" id="table">
         <div class="panel-heading">
@@ -97,7 +97,9 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                <form action="{{ action('BantuanController@store') }}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
                       <label for="nama">Nama Donatur : </label>
                       <input type="text" class="form-control" id="nama" placeholder="masukkan nama donatur..">
@@ -114,12 +116,13 @@
                       <label for="jumlah">Jumlah Donasi : </label>
                       <input type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi..">
                     </div>
-                  </form>
+                  
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -128,8 +131,10 @@
             <thead>
               <tr>
                   <th><em class="fa fa-cog"></em></th>
-                  <th>Waktu Penjualan</th>
-                  <th>Barang</th>
+                  <th>Nama Donatur</th>
+                  <th>Waktu Donasi</th>
+                  <th>Jenis Donasi</th>
+                  <th>Jumlah Donasi</th>
               </tr> 
             </thead>
             <tbody>
@@ -138,24 +143,30 @@
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
+                <td>John Doe</td>
                 <td>1 April 2018</td>
-                <td><a href="#">Lihat Barang</a></td>
+                <td>Uang</td>
+                <td>Rp 1.000.000,-</td>
               </tr>
               <tr>
                 <td align="center">
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
+                <td>John Doe</td>
                 <td>1 April 2018</td>
-                <td><a href="#">Lihat Barang</a></td>
+                <td>Uang</td>
+                <td>Rp 1.000.000,-</td>
               </tr>
               <tr>
                 <td align="center">
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
+                <td>John Doe</td>
                 <td>1 April 2018</td>
-                <td><a href="#">Lihat Barang</a></td>
+                <td>Uang</td>
+                <td>Rp 1.000.000,-</td>
               </tr>
             </tbody>
           </table>

@@ -25,10 +25,17 @@ Route::get('/user', 'PagesController@user');
 Route::get('/adminJadwal', 'JadwalController@admin');
 Route::get('/userJadwal', 'JadwalController@user');
 Route::get('/absensi', 'AbsensiController@index');
+Route::post('/absensi', 'AbsensiController@store');
 Route::get('/barang', 'BarangController@index');
+Route::post('/barang', 'BarangController@store');
 Route::get('/desaBinaan', 'DesaBinaanController@index');
+Route::post('/desaBinaan', 'DesaBinaanController@store');
 Route::get('/keuangan', 'KeuanganController@index');
 Route::post('/keuangan', 'KeuanganController@store');
+Route::get('/penjualan', 'PenjualanController@index');
+Route::post('/penjualan', 'PenjualanController@store');
+Route::get('/bantuan', 'BantuanController@index');
+Route::post('/bantuan', 'BantuanController@store');
 
 Route::get('/about', function () {
     return view('about');
@@ -38,14 +45,6 @@ Route::get('/login', function () {
     return view('signup.index');
 });
 
-
-Route::get('/bantuan', function () {
-    return view('admin.bantuan.bantuan');
-});
-
-Route::get('/penjualan', function () {
-    return view('admin.penjualan.penjualan');
-});
 
 Route::get('/signupuser', function () {
     return view('signup.indexuser');
