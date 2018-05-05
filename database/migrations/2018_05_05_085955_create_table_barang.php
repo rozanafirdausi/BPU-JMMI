@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableAbsensi extends Migration
+class CreateTableBarang extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,12 @@ class CreateTableAbsensi extends Migration
      */
     public function up()
     {
-        Schema::create('absensi', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('jumlah_warga');
+        Schema::create('barang', function (Blueprint $table) {
+            $table->increments('id_barang');
+            $table->string('nama_barang',100);
+            $table->integer('harga_barang');
+            $table->integer('harga_jual');
+            $table->integer('stok');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateTableAbsensi extends Migration
      */
     public function down()
     {
-        Schema::drop('absensi');
+        Schema::drop('barang');
     }
 }

@@ -13,7 +13,7 @@ class CreateTableDesaBinaan extends Migration
     public function up()
     {
         Schema::create('desa_binaan', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_desa_binaan');
             $table->string('nama_desa_binaan',50);
             $table->string('alamat_desa_binaan',100);
             $table->string('contact_person',50);
