@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
+
 
 class CreateTableTransaksipenjualanBarang extends Migration
 {
@@ -12,7 +14,6 @@ class CreateTableTransaksipenjualanBarang extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('transaksipenjualan_barang');
         Schema::create('transaksipenjualan_barang', function (Blueprint $table) {
             $table->increments('id_transaksipenjualan_barang');
             $table->integer('id_transaksipenjualan')->unsigned()->index();
@@ -22,17 +23,17 @@ class CreateTableTransaksipenjualanBarang extends Migration
 
         // $table->primary(['id_transaksipenjualan','id_barang']);
 
-        $table->foreign('id_penjualan')
-        ->references('id_penjualan')
-        ->on('transaksi_penjualan')
-        ->onDelete('cascade')
-        ->onUpdate('cascade');
+        // $table->foreign('id_penjualan')
+        // ->references('id_penjualan')
+        // ->on('transaksi_penjualan')
+        // ->onDelete('cascade')
+        // ->onUpdate('cascade');
 
-        $table->foreign('id_barang')
-        ->references('id_barang')
-        ->on('barang')
-        ->onDelete('cascade')
-        ->onUpdate('cascade');     
+        // $table->foreign('id_barang')
+        // ->references('id_barang')
+        // ->on('barang')
+        // ->onDelete('cascade')
+        // ->onUpdate('cascade');     
     }
 
     /**
@@ -42,6 +43,6 @@ class CreateTableTransaksipenjualanBarang extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksipenjualan_barang');
+        Schema::drop('transaksipenjualan_barang');
     }
 }
