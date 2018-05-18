@@ -30,7 +30,7 @@ Route::post('/barang', 'BarangController@store');
 Route::get('/desaBinaan', 'DesaBinaanController@index');
 Route::get('desaBinaan/create', 'DesaBinaanController@create');
 Route::post('/desaBinaan', 'DesaBinaanController@store');
-Route::delete('/desaBinaan/{{$desaBinaan->id_desa_binaan}}', 'DesaBinaanController@destroy');
+Route::post('/desaBinaan/{id_desa_binaan}', 'DesaBinaanController@destroy');
 Route::get('/keuangan', 'KeuanganController@index');
 Route::post('/keuangan', 'KeuanganController@store');
 Route::get('/penjualan', 'PenjualanController@index');

@@ -11,7 +11,7 @@ class AbsensiController extends Controller
     public function index()
     {
     	return view('absensi.absensi');
-    } 
+    }
 
     public function store(Request $request)
     {

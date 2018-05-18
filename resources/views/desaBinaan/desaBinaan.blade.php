@@ -148,7 +148,7 @@
               <tr>
                 <td align="center">
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <form action="/desaBinaan/{{$desaBinaan->id_desa_binaan}}" method="delete"><a class="btn btn-danger"><em class="fa fa-trash"></em></a></form>
+                  <form action="/desaBinaan/{{$desaBinaan->id_desa_binaan}}" method="POST">{{ csrf_field() }}<a class="btn btn-danger"><button type="submit"><em class="fa fa-trash"></em></button></a></form>
                 </td>
                 <td>{{ $desaBinaan->nama_desa_binaan }}</td>
                 <td>{{ $desaBinaan->alamat_desa_binaan }}</td>

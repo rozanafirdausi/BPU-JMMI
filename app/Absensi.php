@@ -8,9 +8,9 @@ class Absensi extends Model
 {
     //
     protected $table = 'absensi';
-    
+    protected $primaryKey = 'id_absensi';
     protected $fillable = [
     	'id_admin_absensi',
-    	'jumlah_warga'
+    	'jumlah_warga',
     ];
 }

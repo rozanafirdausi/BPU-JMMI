@@ -28,8 +28,7 @@ class DesaBinaanController extends Controller
     }
     public function destroy($id_desa_binaan)
     {
-    	$desaBinaan = DesaBinaan::findOrFail($id_desa_binaan);
-    	$desaBinaan->delete();
-    	return redirect('desaBinaan.desaBinaan');
+    	$desaBinaan = DesaBinaan::where('id_desa_binaan',$id_desa_binaan)->delete();
+    	return back();
     }
 }
