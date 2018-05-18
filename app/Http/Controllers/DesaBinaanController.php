@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\DesaBinaan;
 
 class DesaBinaanController extends Controller
 {
@@ -13,9 +14,14 @@ class DesaBinaanController extends Controller
     	return view('desaBinaan.desaBinaan');
     } 
 
+    public function create()
+    {
+    	$halaman = 'desa_binaan';
+    	return view('desaBinaan.desaBinaan', compact('halaman'));
+    }
     public function store(Request $request)
     {
-        $data = $request->all();
-        dd($data);
+        DesaBinaan::create($request->all());
+        return redirect('desaBinaan');
     }
 }

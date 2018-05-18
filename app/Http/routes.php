@@ -28,6 +28,7 @@ Route::post('/absensi', 'AbsensiController@store');
 Route::get('/barang', 'BarangController@index');
 Route::post('/barang', 'BarangController@store');
 Route::get('/desaBinaan', 'DesaBinaanController@index');
+Route::get('desaBinaan/create', 'DesaBinaanController@create');
 Route::post('/desaBinaan', 'DesaBinaanController@store');
 Route::get('/keuangan', 'KeuanganController@index');
 Route::post('/keuangan', 'KeuanganController@store');
