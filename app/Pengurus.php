@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pengurus extends Model
 {
-    public $table = "pengurus_jmmi";
+    protected $table = 'pengurus_jmmi';
+
+    protected $fillable = [
+    	'nama_pengurus',
+    	'email',
+    	'alamat_pengurus',
+    	'notelp_pengurus',
+    	'password_pengurus',
+    	'jenis_kelamin'
+    ];
 }
