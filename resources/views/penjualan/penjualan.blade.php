@@ -101,20 +101,8 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="nama">Nama Donatur : </label>
-                      <input type="text" class="form-control" id="nama" placeholder="masukkan nama donatur..">
-                    </div>
-                    <div class="form-group">
-                      <label for="waktu">Waktu Donasi : </label>
-                      <input type="text" class="form-control" id="waktu" placeholder="masukkan waktu donasi..">
-                    </div>
-                    <div class="form-group">
-                      <label for="jenis">Jenis Donasi : </label>
-                      <input type="text" class="form-control" id="jenis" placeholder="masukkan jneis donasi..">
-                    </div>
-                    <div class="form-group">
-                      <label for="jumlah">Jumlah Donasi : </label>
-                      <input type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi..">
+                      <label for="jumlah">Jumlah Terjual : </label>
+                      <input type="text" name="jumlah_terjual" class="form-control" id="jumlah" placeholder="masukkan jumlah terjual..">
                     </div>
               </div>
               <div class="modal-footer">
@@ -131,7 +119,7 @@
               <tr>
                   <th><em class="fa fa-cog"></em></th>
                   <th>Waktu Penjualan</th>
-                  <th>Barang</th>
+                  <th>Jumlah Terjual</th>
               </tr> 
             </thead>
             <tbody>
@@ -141,7 +129,7 @@
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
                 <td>1 April 2018</td>
-                <td><a href="#">Lihat Barang</a></td>
+                <td>10</td>
               </tr>
               <tr>
                 <td align="center">
@@ -149,7 +137,7 @@
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
                 <td>1 April 2018</td>
-                <td><a href="#">Lihat Barang</a></td>
+                <td>25</td>
               </tr>
               <tr>
                 <td align="center">
@@ -157,7 +145,7 @@
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
                 <td>1 April 2018</td>
-                <td><a href="#">Lihat Barang</a></td>
+                <td>89</td>
               </tr>
             </tbody>
           </table>

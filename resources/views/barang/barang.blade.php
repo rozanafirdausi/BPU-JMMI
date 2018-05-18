@@ -102,19 +102,19 @@
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
                       <label for="item">Nama Barang : </label>
-                      <input type="text" class="form-control" id="item" placeholder="masukkan nama barang">
+                      <input type="text" name="nama_barang" class="form-control" id="item" placeholder="masukkan nama barang">
                     </div>
                     <div class="form-group">
                       <label for="debit">Harga Barang : </label>
-                      <input type="text" class="form-control" id="debit" placeholder="masukkan harga barang">
+                      <input type="text" name="harga_barang" class="form-control" id="debit" placeholder="masukkan harga barang">
                     </div>
                     <div class="form-group">
                       <label for="kredit">Harga Jual : </label>
-                      <input type="text" class="form-control" id="kredit" placeholder="masukkan harga jual">
+                      <input type="text" name="harga_jual" class="form-control" id="kredit" placeholder="masukkan harga jual">
                     </div>
                     <div class="form-group">
                       <label for="jumlah-uang">Stok : </label>
-                      <input type="text" class="form-control" id="jumlah-uang" placeholder="masukkan stok">
+                      <input type="text" name="stok" class="form-control" id="jumlah-uang" placeholder="masukkan stok">
                     </div>
               </div>
               <div class="modal-footer">
@@ -125,6 +125,46 @@
             </div>
           </div>
         </div>
+
+        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Edit Barang</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="{{ action('BarangController@store') }}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
+                    <div class="form-group">
+                      <label for="item">Nama Barang : </label>
+                      <input type="text" name="nama_barang" class="form-control" id="item" placeholder="masukkan nama barang">
+                    </div>
+                    <div class="form-group">
+                      <label for="debit">Harga Barang : </label>
+                      <input type="text" name="harga_barang" class="form-control" id="debit" placeholder="masukkan harga barang">
+                    </div>
+                    <div class="form-group">
+                      <label for="kredit">Harga Jual : </label>
+                      <input type="text" name="harga_jual" class="form-control" id="kredit" placeholder="masukkan harga jual">
+                    </div>
+                    <div class="form-group">
+                      <label for="jumlah-uang">Stok : </label>
+                      <input type="text" name="stok" class="form-control" id="jumlah-uang" placeholder="masukkan stok">
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
         <div class="panel-body">
           <table class="table table-striped table-bordered table-list">
             <thead>
@@ -139,33 +179,15 @@
             <tbody>
               <tr>
                 <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
+                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>Buku Tulis</td>
-                <td>Rp 2.500,-</td>
-                <td>Rp 4.000,-</td>
-                <td>50</td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>Pensil</td>
-                <td>Rp 1.600,-</td>
-                <td>Rp 2.000,-</td>
-                <td>45</td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>Rautan</td>
-                <td>Rp 1.300,-</td>
-                <td>Rp 1.500,-</td>
-                <td>24</td>
+                @foreach($data as $barang)
+                <td>{{$barang->nama_barang}}</td>
+                <td>{{$barang->harga_barang}}</td>
+                <td>{{$barang->harga_jual}}</td>
+                <td>{{$barang->stok}}</td>
+                @endforeach
               </tr>
             </tbody>
           </table>
