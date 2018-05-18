@@ -102,19 +102,19 @@
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
                       <label for="item">Nama Barang : </label>
-                      <input type="text" class="form-control" id="item" placeholder="masukkan nama barang">
+                      <input type="text" name="nama_barang" class="form-control" id="item" placeholder="masukkan nama barang">
                     </div>
                     <div class="form-group">
                       <label for="debit">Harga Barang : </label>
-                      <input type="text" class="form-control" id="debit" placeholder="masukkan harga barang">
+                      <input type="text" name="harga_barang" class="form-control" id="debit" placeholder="masukkan harga barang">
                     </div>
                     <div class="form-group">
                       <label for="kredit">Harga Jual : </label>
-                      <input type="text" class="form-control" id="kredit" placeholder="masukkan harga jual">
+                      <input type="text" name="harga_jual" class="form-control" id="kredit" placeholder="masukkan harga jual">
                     </div>
                     <div class="form-group">
                       <label for="jumlah-uang">Stok : </label>
-                      <input type="text" class="form-control" id="jumlah-uang" placeholder="masukkan stok">
+                      <input type="text" name="stok" class="form-control" id="jumlah-uang" placeholder="masukkan stok">
                     </div>
               </div>
               <div class="modal-footer">

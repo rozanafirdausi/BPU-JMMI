@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Barang;
 use App\Http\Requests;
 
 class BarangController extends Controller
@@ -15,7 +15,7 @@ class BarangController extends Controller
 
     public function store(Request $request)
     {
-    	$data = $request->all();
-        dd($data);
+    	Barang::create($request->all());
+    	return redirect('barang');
     }
 }
