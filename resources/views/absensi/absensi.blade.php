@@ -101,10 +101,6 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="tanggal">ID : </label>
-                      <input type="text" class="form-control" id="tanggal" placeholder="masukkan ID">
-                    </div>
-                    <div class="form-group">
                       <label for="item">Pengurus JMMI : </label>
                       <input type="text" class="form-control" id="item" placeholder="masukkan nama pengurus">
                     </div>
@@ -131,7 +127,6 @@
             <thead>
               <tr>
                   <th><em class="fa fa-cog"></em></th>
-                  <th>ID</th>
                   <th>Pengurus JMMI</th>
                   <th>ID Jadwal</th>
                   <th>Jumlah Warga</th>
@@ -143,7 +138,6 @@
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>1</td>
                 <td>Rozana F</td>
                 <td>JAD01</td>
                 <td>10</td>
@@ -153,7 +147,6 @@
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>2</td>
                 <td>Damai M</td>
                 <td>JAD02</td>
                 <td>20</td>
@@ -163,7 +156,6 @@
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>3</td>
                 <td>Hidayatul M</td>
                 <td>JAD03</td>
                 <td>17</td>

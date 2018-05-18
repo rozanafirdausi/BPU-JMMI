@@ -101,10 +101,6 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="tanggal">ID : </label>
-                      <input type="text" class="form-control" id="tanggal" placeholder="masukkan ID">
-                    </div>
-                    <div class="form-group">
                       <label for="item">Nama Barang : </label>
                       <input type="text" class="form-control" id="item" placeholder="masukkan nama barang">
                     </div>
@@ -134,7 +130,6 @@
             <thead>
               <tr>
                   <th><em class="fa fa-cog"></em></th>
-                  <th>ID</th>
                   <th>Nama Barang</th>
                   <th>Harga Barang</th>
                   <th>Harga Jual</th>
@@ -147,7 +142,6 @@
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>1</td>
                 <td>Buku Tulis</td>
                 <td>Rp 2.500,-</td>
                 <td>Rp 4.000,-</td>
@@ -158,7 +152,6 @@
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>2</td>
                 <td>Pensil</td>
                 <td>Rp 1.600,-</td>
                 <td>Rp 2.000,-</td>
@@ -169,7 +162,6 @@
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
-                <td>3</td>
                 <td>Rautan</td>
                 <td>Rp 1.300,-</td>
                 <td>Rp 1.500,-</td>
