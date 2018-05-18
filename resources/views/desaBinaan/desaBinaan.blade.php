@@ -130,12 +130,12 @@
             </div>
           </div>
         </div>
-        <div class="panel-body">
+          <div class="panel-body">
           <table class="table table-striped table-bordered table-list">
             <thead>
               <tr>
                   <th><em class="fa fa-cog"></em></th>
-                  <th>ID</th>
+                  <!-- <th>ID</th> -->
                   <th>Nama Desa Binaan</th>
                   <th>Alamat Desa Binaan</th>
                   <th>CP</th>
@@ -144,46 +144,23 @@
               </tr> 
             </thead>
             <tbody>
+              @foreach ($desa_binaan_list as $desaBinaan)
               <tr>
                 <td align="center">
                   <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                  <form action="/desaBinaan/{{$desaBinaan->id_desa_binaan}}" method="delete"><a class="btn btn-danger"><em class="fa fa-trash"></em></a></form>
                 </td>
-                <td>1</td>
-                <td>Keputih</td>
-                <td>Keputih, Surabaya, Jawa Timur</td>
-                <td>Ojan</td>
-                <td>082567453980</td>
-                <td>120</td>
+                <td>{{ $desaBinaan->nama_desa_binaan }}</td>
+                <td>{{ $desaBinaan->alamat_desa_binaan }}</td>
+                <td>{{ $desaBinaan->contact_person }}</td>
+                <td>{{ $desaBinaan->telp_contact_person }}</td>
+                <td>{{ $desaBinaan->jumlah_warga }}</td>
               </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>2</td>
-                <td>Kejawan</td>
-                <td>Kejawan, Surabaya, Jawa Timur</td>
-                <td>Mar</td>
-                <td>087654321876</td>
-                <td>90</td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>3</td>
-                <td>Gebang</td>
-                <td>Gebang, Surabaya, Jawa Timur</td>
-                <td>Hida</td>
-                <td>089789678567</td>
-                <td>110</td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
-      
-        </div>
+  </div>
+
         <div class="panel-footer">
           <div class="row">
             <div class="col col-xs-4">Page 1 of 5

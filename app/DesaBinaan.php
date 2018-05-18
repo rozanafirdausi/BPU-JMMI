@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DesaBinaan extends Model
 {
     protected $table = 'desa_binaan';
-
+ 
     protected $fillable = [
         'nama_desa_binaan',
         'alamat_desa_binaan',

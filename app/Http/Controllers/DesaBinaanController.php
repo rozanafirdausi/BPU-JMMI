@@ -11,8 +11,10 @@ class DesaBinaanController extends Controller
 {
     public function index()
     {
-    	return view('desaBinaan.desaBinaan');
-    } 
+    	// $halaman='desa_binaan';
+    	$desa_binaan_list = DesaBinaan::all();
+    	return view('desaBinaan.desaBinaan',compact('desa_binaan_list'));
+    }
 
     public function create()
     {
@@ -23,5 +25,11 @@ class DesaBinaanController extends Controller
     {
         DesaBinaan::create($request->all());
         return redirect('desaBinaan');
+    }
+    public function destroy($id_desa_binaan)
+    {
+    	$desaBinaan = DesaBinaan::findOrFail($id_desa_binaan);
+    	$desaBinaan->delete();
+    	return redirect('desaBinaan.desaBinaan');
     }
 }
