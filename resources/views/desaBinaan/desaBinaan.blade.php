@@ -97,32 +97,28 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="{{ action('DesaBinaanController@store') }}" method="post">
+                <form action="/desaBinaan" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="tanggal">ID : </label>
-                      <input type="text" class="form-control" id="tanggal" placeholder="masukkan ID">
-                    </div>
-                    <div class="form-group">
                       <label for="item">Nama Desa Binaan : </label>
-                      <input type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan">
+                      <input name="nama_desa_binaan" type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan">
                     </div>
                     <div class="form-group">
                       <label for="debit">Alamat Desa Binaan : </label>
-                      <input type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan">
+                      <input name="alamat_desa_binaan" type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan">
                     </div>
                     <div class="form-group">
                       <label for="kredit">CP : </label>
-                      <input type="text" class="form-control" id="kredit" placeholder="masukkan nama cp">
+                      <input name="contact_person" type="text" class="form-control" id="kredit" placeholder="masukkan nama cp">
                     </div>
                     <div class="form-group">
                       <label for="jumlah-uang">Telp CP : </label>
-                      <input type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp">
+                      <input name="telp_contact_person" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp">
                     </div>
                     <div class="form-group">
                       <label for="keterangan">Jumlah Warga : </label>
-                      <input type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga">
+                      <input name="jumlah_warga" type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga">
                     </div>
                 
               </div>
