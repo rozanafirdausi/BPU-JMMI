@@ -12,8 +12,8 @@ class DesaBinaanController extends Controller
     public function index()
     {
     	// $halaman='desa_binaan';
-    	$desa_binaan_list = DesaBinaan::all();
-    	return view('desaBinaan.desaBinaan',compact('desa_binaan_list'));
+    	$desaBinaan = DesaBinaan::all();
+    	return view('desaBinaan.desaBinaan',compact('desaBinaan'));
     }
 
     public function create()
@@ -25,6 +25,18 @@ class DesaBinaanController extends Controller
     {
         DesaBinaan::create($request->all());
         return redirect('desaBinaan');
+    }
+    public function edit($id_desa_binaan)
+    {
+    	$desaBinaan = DesaBinaan::findOrFail($id_desa_binaan);
+    	// dd($desaBinaan);
+    	return view('desaBinaan.desaBinaan',compact('desaBinaan'));
+    }
+    public function update(Request $request, $id_desa_binaan)
+    {
+    	$desaBinaan = DesaBinaan::findOrFail($id_desa_binaan);
+    	$desaBinaan->update($request->all());
+    	return redirect('desaBinaan');
     }
     public function destroy($id_desa_binaan)
     {
