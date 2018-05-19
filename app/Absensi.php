@@ -13,4 +13,9 @@ class Absensi extends Model
     	'id_admin_absensi',
     	'jumlah_warga',
     ];
+
+    public function jadwal()
+    {
+        return $this->hasMany('App\JadwalAbsensi','id_absensi');
+    }   
 }

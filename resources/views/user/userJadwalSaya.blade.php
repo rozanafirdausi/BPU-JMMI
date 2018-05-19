@@ -97,7 +97,7 @@
               <tr>               
                 <td>{{ $jadwals->jadwal->tanggal }} </td>
                 <td>{{ $jadwals->jadwal->waktu }} </td>
-                <td>{{ $jadwals->jadwal->id_desa_binaan_jadwal }}</td>
+                <td>{{ $jadwals->jadwal->desaBinaan->nama_desa_binaan }}</td>
                 <td>{{ $jadwals->jadwal->tempat }}</td>                           
                 <td align="center">
                   <a>

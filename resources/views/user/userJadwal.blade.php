@@ -188,7 +188,7 @@
               <tr>
                 <td>{{ $jadwals->tanggal}}</td>
                 <td>{{ $jadwals->waktu}}</td>
-                <td>{{ $jadwals->id_desa_binaan_jadwal}}</td>
+                <td>{{ $jadwals->desaBinaan->nama_desa_binaan}}</td>
                 <td>{{ $jadwals->tempat}}</td>
                 <td>
                 <form action="{{URL::to('/jadwal/'.$jadwals->id_jadwal_mengajar)}}/daftar" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-secondary">Daftar</button></form>
