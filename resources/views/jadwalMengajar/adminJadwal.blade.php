@@ -36,7 +36,8 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
-
+  <link href="css/table.css" rel="stylesheet">
+  <link href="css/keuangan.css" rel="stylesheet">
   <!-- =======================================================
     Theme Name: Imperial
     Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
@@ -72,13 +73,167 @@
   
 <body>
   <div id="preloader"></div>
+  <div class="container fluid">
+    <h1>Jadwal Mengajar BPU - JMMI 2018</h1>
+    <div class="col-sm-12">
+      <div class="panel panel-default panel-table" id="table">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col col-xs-6">
+            </div>
+            <div class="col col-xs-6 text-right">
+              <button type="button" class="btn btn-sm btn-primary btn-create" data-toggle="modal" data-target="#add-modal">Create New</button>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Tambah Rincian Jadwal Menagajar</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="{{ action('JadwalController@store') }}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
+                    <div class="form-group">
+                      <label for="nama">Tanggal : </label>
+                      <input name="tanggal" type="text" class="form-control" id="nama" placeholder="masukkan tanggal..">
+                    </div>
+                    <div class="form-group">
+                      <label for="jenis">Waktu : </label>
+                      <input name="waktu" type="text" class="form-control" id="jenis" placeholder="masukkan waktu..">
+                    </div>
+                    <div class="form-group">
+                      <label for="desaBinaan">Desa Binaan :</label>
+                      <select name="desa_binaan" class="form-control" id="exampleFormControlSelect1">
+                        @foreach ($desaBinaan as $desaBinaans)
+                        <option value="{{ $desaBinaans->id_desa_binaan }}">{{ $desaBinaans->nama_desa_binaan }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="jumlah">Tempat : </label>
+                      <input name="tempat" type="text" class="form-control" id="jumlah" placeholder="masukkan tempat..">
+                    </div>
+                  
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
-    <!--==========================
-  Services Section
-  ============================-->
-  <section id="services">
-  	
-  </section>
+        <!-- Modal -->
+        @foreach ($jadwal as $jadwals)
+        <div class="modal fade" id="edit-jadwal-{{$jadwals->id_jadwal_mengajar}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Ubah Jadwal</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="{{URL::to('/jadwal/'.$jadwals->id_jadwal_mengajar).'/update'}}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
+                    <div class="form-group">
+                      <label for="nama">Tanggal : </label>
+                      <input name="tanggal" type="text" class="form-control" id="nama" placeholder="masukkan tanggal.." value="{{ $jadwals->tanggal }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="jenis">Waktu : </label>
+                      <input name="waktu" type="text" class="form-control" id="jenis" placeholder="masukkan waktu.." value="{{ $jadwals->waktu }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="desaBinaan">Desa Binaan :</label>
+                      <select name="desa_binaan" class="form-control" id="exampleFormControlSelect1">
+                        @foreach ($desaBinaan as $desaBinaans)
+                        <option value="{{ $desaBinaans->id_desa_binaan }}">{{ $desaBinaans->nama_desa_binaan }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="jumlah">Tempat : </label>
+                      <input name="tempat" type="text" class="form-control" id="jumlah" placeholder="masukkan tempat.." value="{{ $jadwals->tempat }}">
+                    </div>
+                  
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        @endforeach
+        <div class="panel-body">
+          <table class="table table-striped table-bordered table-list">
+            <thead>
+              <tr>
+                  <th><em class="fa fa-cog"></em></th>
+                  <th>Tanggal</th>
+                  <th>Waktu</th>
+                  <th>Desa Binaan</th>
+                  <th>Tempat</th>
+              </tr> 
+            </thead>
+            <tbody>
+              @foreach ($jadwal as $jadwals)
+              <tr>
+                <td align="center">
+                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-jadwal-{{$jadwals->id_jadwal_mengajar}}">
+                    <em class="fa fa-pencil"></em>
+                  </a>
+                  <a>
+                    <form action="{{URL::to('/jadwal/'.$jadwals->id_jadwal_mengajar)}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
+                  </a>
+                </td>
+                
+                <td>{{ $jadwals->tanggal}}</td>
+                <td>{{ $jadwals->waktu}}</td>
+                <td>{{ $jadwals->id_desa_binaan_jadwal}}</td>
+                <td>{{ $jadwals->tempat}}</td>
+
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+      
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col col-xs-4">Page 1 of 5
+            </div>
+            <div class="col col-xs-8">
+              <ul class="pagination hidden-xs pull-right">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+              </ul>
+              <ul class="pagination visible-xs pull-right">
+                  <li><a href="#">«</a></li>
+                  <li><a href="#">»</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>     
+    </div>    
+  </div>
+  
 
   <!--==========================
   Footer

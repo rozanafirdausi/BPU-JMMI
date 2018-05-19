@@ -55,6 +55,10 @@ Route::post('/bantuan', 'BantuanController@store');
 Route::post('/bantuan/{id_bantuan}/update', 'BantuanController@update');
 Route::post('/bantuan/{id_bantuan}', 'BantuanController@destroy');
 
+Route::post('/jadwal', 'JadwalController@store');
+Route::post('/jadwal/{id_jadwal_mengajar}/update', 'JadwalController@update');
+Route::post('jadwal/{id_jadwal_mengajar}', 'JadwalController@destroy');
+
 Route::get('/about', function () {
     return view('about');
 });

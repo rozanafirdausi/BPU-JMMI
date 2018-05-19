@@ -16,8 +16,8 @@ class CreateTableJadwalMengajar extends Migration
             $table->increments('id_jadwal_mengajar');
             $table->integer('id_desa_binaan_jadwal')->unsigned();
             $table->integer('id_admin_jadwal')->unsigned();
-            $table->date('tanggal');
-            $table->time('waktu');
+            $table->string('tanggal',100);
+            $table->string('waktu',100);
             $table->string('tempat');
             $table->timestamps();
         });
