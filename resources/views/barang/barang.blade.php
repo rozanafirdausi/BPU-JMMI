@@ -66,7 +66,7 @@
           <li class="test"><a href="adminJadwal">Jadwal Mengajar</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
   </header>
@@ -97,7 +97,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="{{ action('BarangController@store') }}" method="post">
+                <form action="/barang" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
@@ -137,7 +137,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="{{URL::to('barang/'.$barang->id_barang)}}" method="post">
+                <form action="{{URL::to('/barang/'.$barang->id_barang).'/update'}}" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                   
@@ -184,8 +184,10 @@
             @foreach($data as $barang)
               <tr>
                 <td align="center">
-                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$barang->id_barang}}" href="{{URL::to('barang/'.$barang->id_barang)}}" method="get"><em class="fa fa-pencil"></em></a>
-                  <form action="/desaBinaan/{{$desaBinaan->id_desa_binaan}}" method="POST">{{ csrf_field() }}<a class="btn btn-danger"><button type="submit"><em class="fa fa-trash"></em></button></a></form>
+                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$barang->id_barang}}" href="{{URL::to('/barang/'.$barang->id_barang)}}" method="get">
+                    <em class="fa fa-pencil"></em></a>
+                  
+                  <form action="/barang/{{$barang->id_barang}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
                 </td>                
                 <td>{{$barang->nama_barang}}</td>
                 <td>{{$barang->harga_barang}}</td>

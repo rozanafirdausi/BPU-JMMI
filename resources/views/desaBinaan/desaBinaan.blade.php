@@ -130,8 +130,8 @@
             </div>
           </div>
         </div>
-
-        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        @foreach ($desaBinaan as $desa)
+        <div class="modal fade" id="edit-modal-{{$desa->id_desa_binaan}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -141,28 +141,28 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="/desaBinaan/{{$desaBinaan->id_desa_binaan}}/update" method="post">
+                <form action="{{URL::to('/desaBinaan/'.$desa->id_desa_binaan.'/update')}}" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
                       <label for="item">Nama Desa Binaan : </label>
-                      <input name="nama_desa_binaan" type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan">
+                      <input name="nama_desa_binaan" type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan" value="{{ $desa->nama_desa_binaan }}">
                     </div>
                     <div class="form-group">
                       <label for="debit">Alamat Desa Binaan : </label>
-                      <input name="alamat_desa_binaan" type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan">
+                      <input name="alamat_desa_binaan" type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan" value="{{ $desa->alamat_desa_binaan }}">
                     </div>
                     <div class="form-group">
                       <label for="kredit">CP : </label>
-                      <input name="contact_person" type="text" class="form-control" id="kredit" placeholder="masukkan nama cp">
+                      <input name="contact_person" type="text" class="form-control" id="kredit" placeholder="masukkan nama cp" value="{{ $desa->contact_person }}">
                     </div>
                     <div class="form-group">
                       <label for="jumlah-uang">Telp CP : </label>
-                      <input name="telp_contact_person" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp">
+                      <input name="telp_contact_person" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp" value="{{ $desa->telp_contact_person }}">
                     </div>
                     <div class="form-group">
                       <label for="keterangan">Jumlah Warga : </label>
-                      <input name="jumlah_warga" type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga">
+                      <input name="jumlah_warga" type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga" value="{{ $desa->jumlah_warga }}">
                     </div>
               </div>
               <div class="modal-footer">
@@ -173,7 +173,7 @@
             </div>
           </div>
         </div>
-
+        @endforeach
           <div class="panel-body">
           <table class="table table-striped table-bordered table-list">
             <thead>
@@ -188,17 +188,26 @@
               </tr> 
             </thead>
             <tbody>
-              @foreach ($desaBinaan as $desaBinaan)
+              @foreach ($desaBinaan as $desa)
               <tr>
                 <td align="center">
-                  <form action="/desaBinaan/{{$desaBinaan->id_desa_binaan}}/edit" method="get"><a class="btn btn-default"><button class="btn btn-default" type="button" data-toggle="modal" data-target="#edit-modal"><em class="fa fa-pencil"></em></button></a></form>
-                  <form action="/desaBinaan/{{$desaBinaan->id_desa_binaan}}" method="POST">{{ csrf_field() }}<a class="btn btn-danger"><button type="submit"><em class="fa fa-trash"></em></button></a></form>
+
+
+                  <!-- <form action="/desaBinaan/{{$desa->id_desa_binaan}}" method="get"> -->
+                    <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$desa->id_desa_binaan}}" href="{{URL::to('/desaBinaan/'.$desa->id_desa_binaan)}}" method="get">
+                      <!-- <button class="btn btn-default" type="button" > -->
+                        <em class="fa fa-pencil">
+                        </em>
+                      
+                    </a>
+                  </form>
+                  <form action="/desaBinaan/{{$desa->id_desa_binaan}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
                 </td>
-                <td>{{ $desaBinaan->nama_desa_binaan }}</td>
-                <td>{{ $desaBinaan->alamat_desa_binaan }}</td>
-                <td>{{ $desaBinaan->contact_person }}</td>
-                <td>{{ $desaBinaan->telp_contact_person }}</td>
-                <td>{{ $desaBinaan->jumlah_warga }}</td>
+                <td>{{ $desa->nama_desa_binaan }}</td>
+                <td>{{ $desa->alamat_desa_binaan }}</td>
+                <td>{{ $desa->contact_person }}</td>
+                <td>{{ $desa->telp_contact_person }}</td>
+                <td>{{ $desa->jumlah_warga }}</td>
               </tr>
               @endforeach
             </tbody>

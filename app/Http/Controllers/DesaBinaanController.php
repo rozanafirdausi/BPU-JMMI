@@ -15,12 +15,6 @@ class DesaBinaanController extends Controller
     	$desaBinaan = DesaBinaan::all();
     	return view('desaBinaan.desaBinaan',compact('desaBinaan'));
     }
-
-    public function create()
-    {
-    	$halaman = 'desa_binaan';
-    	return view('desaBinaan.desaBinaan', compact('halaman'));
-    }
     public function store(Request $request)
     {
         DesaBinaan::create($request->all());
@@ -29,12 +23,21 @@ class DesaBinaanController extends Controller
     public function edit($id_desa_binaan)
     {
     	$desaBinaan = DesaBinaan::findOrFail($id_desa_binaan);
-    	// dd($desaBinaan);
     	return view('desaBinaan.desaBinaan',compact('desaBinaan'));
     }
     public function update(Request $request, $id_desa_binaan)
     {
+    	// $data = Barang::where('id_barang',$id)->first();  	
+    	// $data->nama_barang = $request->nama_barang;
+    	// $data->harga_barang = $request->harga_barang;
+    	// $data->harga_jual = $request->harga_jual;
+    	// $data->stok = $request->stok;
+    	// $data->save();
+    	// return redirect('barang');
+
+    	// $desaBinaan = DesaBinaan::where('id_desa_binaan',$id_desa_binaan)->first();
     	$desaBinaan = DesaBinaan::findOrFail($id_desa_binaan);
+
     	$desaBinaan->update($request->all());
     	return redirect('desaBinaan');
     }

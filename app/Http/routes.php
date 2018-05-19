@@ -25,17 +25,19 @@ Route::get('/adminJadwal', 'JadwalController@admin');
 Route::get('/userJadwal', 'JadwalController@user');
 Route::get('/absensi', 'AbsensiController@index');
 Route::post('/absensi', 'AbsensiController@store');
+
 Route::get('/barang', 'BarangController@index');
 Route::post('/barang', 'BarangController@store');
-Route::get('/barang/{id}', 'BarangController@edit');
-Route::post('/barang/delete/{id}', 'BarangController@destroy');
-Route::post('/barang/{id}', 'BarangController@update');
+Route::post('/barang/{id_barang}', 'BarangController@destroy');
+Route::get('/barang/{id_barang}', 'BarangController@edit');
+Route::post('/barang/{id_barang}/update', 'BarangController@update');
+
 Route::get('/desaBinaan', 'DesaBinaanController@index');
-Route::get('desaBinaan/create', 'DesaBinaanController@create');
 Route::post('/desaBinaan', 'DesaBinaanController@store');
 Route::post('/desaBinaan/{id_desa_binaan}', 'DesaBinaanController@destroy');
-Route::get('/desaBinaan/{id_desa_binaan}/edit', 'DesaBinaanController@edit');
+Route::get('/desaBinaan/{id_desa_binaan}', 'DesaBinaanController@edit');
 Route::post('/desaBinaan/{id_desa_binaan}/update', 'DesaBinaanController@update');
+
 Route::get('/keuangan', 'KeuanganController@index');
 Route::post('/keuangan', 'KeuanganController@store');
 Route::get('/penjualan', 'PenjualanController@index');
@@ -47,8 +49,12 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/login', function () {
-    return view('signup.index');
+// Route::get('/login', function () {
+//     return view('signup.index');
+// });
+
+Route::get('/logout',function(){
+	return view('signup.indexadmin');
 });
 
 

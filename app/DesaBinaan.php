@@ -13,6 +13,6 @@ class DesaBinaan extends Model
         'alamat_desa_binaan',
         'contact_person',
         'telp_contact_person',
-        'jumlah_warga',
+        'jumlah_warga'
     ];
 }

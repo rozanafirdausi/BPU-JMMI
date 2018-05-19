@@ -39,7 +39,7 @@ class BarangController extends Controller
 
     }
 
-    public function destroy(Request $request, $id)
+    public function destroy($id)
     {
     	$data = Barang::where('id_barang',$id)->delete();
     	return back();
