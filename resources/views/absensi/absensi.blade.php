@@ -96,21 +96,60 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body"> 
                 <form action="{{ action('AbsensiController@store') }}" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="item">Pengurus JMMI : </label>
-                      <input type="text" class="form-control" id="item" placeholder="masukkan nama pengurus">
+                      <label for="desaBinaan">Jadwal :</label>
+                      <select name="id_jadwal_mengajar" class="form-control" id="exampleFormControlSelect1">
+                        @foreach ($jadwal as $jadwals)
+                        <option value="{{$jadwals->id_jadwal_mengajar}}">{{$jadwals->desaBinaan->nama_desa_binaan}} - {{$jadwals->tempat}}</option>
+                        @endforeach
+                      </select>
+                      <br>
                     </div>
                     <div class="form-group">
-                      <label for="debit">ID Jadwal : </label>
-                      <input type="text" class="form-control" id="debit" placeholder="masukkan id jadwal">
+                      <label for="jumlah_warga">Jumlah Warga: </label>
+                      <input name="jumlah_warga" type="text" class="form-control" id="jumlah_warga" placeholder="masukkan jumlah warga..">
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        @foreach ($absensi as $absensis)        
+        <div class="modal fade" id="edit-absensi-{{$absensis->id_jadwal_absensi}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Ubah Absensi</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body"> 
+                <form action="{{URL::to('/absensi/'.$absensis->id_jadwal_mengajar.'/update')}}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
+                    <div class="form-group">
+                      <label for="desaBinaan">Jadwal :</label>
+                      <select name="id_jadwal_mengajar" class="form-control" id="exampleFormControlSelect1">
+                        @foreach ($jadwal as $jadwals)
+                        <option value="{{$jadwals->id_jadwal_mengajar}}">{{$jadwals->desaBinaan->nama_desa_binaan}} - {{$jadwals->tempat}}</option>
+                        @endforeach
+                      </select>
+                      <br>
                     </div>
                     <div class="form-group">
-                      <label for="kredit">Jumlah Warga : </label>
-                      <input type="text" class="form-control" id="kredit" placeholder="masukkan jumlah warga">
+                      <label for="kredit">Jumlah Warga </label>
+                      <input type="text" class="form-control" id="kredit" placeholder="masukkan jumlah warga" name="jumlah_warga" value="{{ $absensis->jumlah_warga }}">
                     </div>
                 
               </div>
@@ -122,44 +161,75 @@
             </div>
           </div>
         </div>
+        @endforeach
+        <!-- Modal -->
+        @foreach ($absensi as $absensis)
+        <div class="modal fade" id="list-pengurus-{{ $absensis->id_jadwal_mengajar }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Daftar Pengurus</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <table class="table table-striped table-bordered table-list"> 
+                <thead>
+                  <tr>
+                      <th >Pengajar</th>
+                  </tr> 
+                </thead>
+                <tbody>
+                @foreach ($pengurus as $penguruses)
+                  <tr>
+                    <td>
+                      {{ $penguruses->pengurus->nama_pengurus}}
+                    </td>                    
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+                
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button> -->
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        @endforeach
+
         <div class="panel-body">
           <table class="table table-striped table-bordered table-list">
             <thead>
               <tr>
                   <th><em class="fa fa-cog"></em></th>
-                  <th>Pengurus JMMI</th>
-                  <th>ID Jadwal</th>
+                  <th>Jadwal Mengajar</th>
+                  <th>Pengurus</th>
                   <th>Jumlah Warga</th>
               </tr> 
             </thead>
             <tbody>
+            @foreach ($absensi as $absensis)
               <tr>
                 <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-absensi-{{$absensis->id_jadwal_absensi}}">
+                    <em class="fa fa-pencil"></em>
+                  </a>
+                  <a>
+                    <form action="{{URL::to('/absensi/'.$absensis->id_jadwal_absensi)}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
+                  </a>
                 </td>
-                <td>Rozana F</td>
-                <td>JAD01</td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                <td>{{ $absensis->jadwal->desaBinaan->nama_desa_binaan}} - {{ $absensis->jadwal->tempat }}</td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#list-pengurus-{{$absensis->id_jadwal_mengajar}}">Lihat Pengurus</button>
                 </td>
-                <td>Damai M</td>
-                <td>JAD02</td>
-                <td>20</td>
+                <td>{{ $absensis->jumlah_warga }}</td>
               </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>Hidayatul M</td>
-                <td>JAD03</td>
-                <td>17</td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
       

@@ -29,6 +29,9 @@ Route::post('/userJadwalTerdaftar/{id_jadwal_terdaftar}', 'JadwalController@terd
 
 Route::get('/absensi', 'AbsensiController@index');
 Route::post('/absensi', 'AbsensiController@store');
+Route::post('/absensi/{id_jadwal_mengajar/pengurus}', 'AbsensiController@pengurus');
+Route::post('/absensi/{id_jadwal_absensi}/update', 'AbsensiController@update');
+Route::post('/absensi/{id_jadwal_absensi}', 'AbsensiController@destroy');
 
 Route::get('/barang', 'BarangController@index');
 Route::post('/barang', 'BarangController@store');

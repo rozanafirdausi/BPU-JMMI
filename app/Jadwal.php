@@ -27,4 +27,9 @@ class Jadwal extends Model
         return $this->belongsTo('App\DesaBinaan', 'id_desa_binaan_jadwal');
     }
 
+    public function absen()
+    {
+        return $this->hasMany('App\JadwalAbsensi','id_jadwal_mengajar');
+    }
+
 }
