@@ -113,13 +113,52 @@
             </div>
           </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="lihat-barang-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">List Barang</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-striped table-bordered table-list">
+                  <thead>
+                    <tr>                        
+                        <th>Nama Barang</th>
+                        <th>Harga Barang</th>
+                        <th>Harga Jual</th>
+                        <th>Jumlah Terjual</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td align="center">
+                        Pensil
+                      </td>
+                      <td>12.000</td>
+                      <td>14.000</td>
+                      <td>5</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
         <div class="panel-body">
           <table class="table table-striped table-bordered table-list">
             <thead>
               <tr>
                   <th><em class="fa fa-cog"></em></th>
                   <th>Waktu Penjualan</th>
-                  <th>Jumlah Terjual</th>
+                  <th>Barang</th>
               </tr> 
             </thead>
             <tbody>
@@ -129,24 +168,9 @@
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
                 <td>1 April 2018</td>
-                <td>10</td>
+                <td><button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#lihat-barang-modal">Lihat Barang</button></td>
               </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>1 April 2018</td>
-                <td>25</td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>1 April 2018</td>
-                <td>89</td>
-              </tr>
+              
             </tbody>
           </table>
       
