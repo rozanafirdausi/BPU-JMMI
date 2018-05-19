@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use App\Bantuan;
+use App\Admin;
 class BantuanController extends Controller
 {
     /**
@@ -15,7 +16,8 @@ class BantuanController extends Controller
      */
     public function index()
     {
-        return view('bantuan.bantuan');
+        $bantuan = Bantuan::all();
+        return view('bantuan.bantuan',compact('bantuan'));
     }
 
     /**
@@ -35,9 +37,20 @@ class BantuanController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+    {   
+        $bantuans['id_admin'] = 1;
+        $bantuans['nama_donatur'] = $request->nama_donatur;
+        $bantuans['jenis_bantuan'] = $request->jenis_donasi;
+        $bantuans['jumlah_bantuan'] = $request->jumlah_donasi;
+
+        Bantuan::create($bantuans);
+        return redirect('bantuan');
+    }
+
+    public function edit($id)
     {
-        $data = $request->all();
-        dd($data);
+        $bantuans = Bantuan::findOrFail($id);
+        return view('bantuan.bantuan', compact('bantuans'));
     }
 
     /**
@@ -57,11 +70,7 @@ class BantuanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -71,7 +80,15 @@ class BantuanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $$data = Barang::where('id_barang',$id)->first();
+        $bantuans = Bantuan::where('id_bantuan',$id)->first();        
+        $bantuans['id_admin'] = 1;
+        $bantuans['nama_donatur'] = $request->nama_donatur;
+        $bantuans['jenis_bantuan'] = $request->jenis_donasi;
+        $bantuans['jumlah_bantuan'] = $request->jumlah_donasi;
+
+        $bantuans->save();
+        return redirect('bantuan');
     }
 
     /**
@@ -82,6 +99,7 @@ class BantuanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bantuan = Bantuan::where('id_bantuan',$id)->delete();
+        return back();
     }
 }

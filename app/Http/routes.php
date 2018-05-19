@@ -42,8 +42,11 @@ Route::get('/keuangan', 'KeuanganController@index');
 Route::post('/keuangan', 'KeuanganController@store');
 Route::get('/penjualan', 'PenjualanController@index');
 Route::post('/penjualan', 'PenjualanController@store');
+
 Route::get('/bantuan', 'BantuanController@index');
 Route::post('/bantuan', 'BantuanController@store');
+Route::post('/bantuan/{id_bantuan}/update', 'BantuanController@update');
+Route::post('/bantuan/{id_bantuan}', 'BantuanController@destroy');
 
 Route::get('/about', function () {
     return view('about');

@@ -102,19 +102,15 @@
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
                       <label for="nama">Nama Donatur : </label>
-                      <input type="text" class="form-control" id="nama" placeholder="masukkan nama donatur..">
-                    </div>
-                    <div class="form-group">
-                      <label for="waktu">Waktu Donasi : </label>
-                      <input type="text" class="form-control" id="waktu" placeholder="masukkan waktu donasi..">
+                      <input name="nama_donatur" type="text" class="form-control" id="nama" placeholder="masukkan nama donatur..">
                     </div>
                     <div class="form-group">
                       <label for="jenis">Jenis Donasi : </label>
-                      <input type="text" class="form-control" id="jenis" placeholder="masukkan jneis donasi..">
+                      <input name="jenis_donasi" type="text" class="form-control" id="jenis" placeholder="masukkan jneis donasi..">
                     </div>
                     <div class="form-group">
                       <label for="jumlah">Jumlah Donasi : </label>
-                      <input type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi..">
+                      <input name="jumlah_donasi" type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi..">
                     </div>
                   
               </div>
@@ -126,47 +122,70 @@
             </div>
           </div>
         </div>
+        <!-- Modal -->
+        @foreach ($bantuan as $bantuans)
+        <div class="modal fade" id="list-bantuan-{{$bantuans->id_bantuan}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Tambah Rincian Bantuan</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="{{URL::to('/bantuan/'.$bantuans->id_bantuan).'/update'}}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
+                    <div class="form-group">
+                      <label for="nama">Nama Donatur : </label>
+                      <input name="nama_donatur" type="text" class="form-control" id="nama" placeholder="masukkan nama donatur.." value="{{ $bantuans->nama_donatur }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="jenis">Jenis Donasi : </label>
+                      <input name="jenis_donasi" type="text" class="form-control" id="jenis" placeholder="masukkan jenis donasi.." value="{{ $bantuans->jenis_bantuan }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="jumlah">Jumlah Donasi : </label>
+                      <input name="jumlah_donasi" type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi.." value="{{ $bantuans->jumlah_bantuan }}">
+                    </div>
+                  
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        @endforeach
         <div class="panel-body">
           <table class="table table-striped table-bordered table-list">
             <thead>
               <tr>
                   <th><em class="fa fa-cog"></em></th>
                   <th>Nama Donatur</th>
-                  <th>Waktu Donasi</th>
                   <th>Jenis Donasi</th>
                   <th>Jumlah Donasi</th>
               </tr> 
             </thead>
             <tbody>
+            @foreach($bantuan as $bantuans)
               <tr>
                 <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                  <a class="btn btn-default" data-toggle="modal" data-target="#list-bantuan-{{ $bantuans->id_bantuan }}">
+                    <em class="fa fa-pencil"></em>
+                  </a>
+                  <a>
+                    <form action="/bantuan/{{$bantuans->id_bantuan}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
+                  </a>
                 </td>
-                <td>John Doe</td>
-                <td>1 April 2018</td>
-                <td>Uang</td>
-                <td>Rp 1.000.000,-</td>
+                <td>{{ $bantuans->nama_donatur }}</td>
+                <td>{{ $bantuans->jenis_bantuan }}</td>
+                <td>{{ $bantuans->jumlah_bantuan }}</td>
               </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>John Doe</td>
-                <td>1 April 2018</td>
-                <td>Uang</td>
-                <td>Rp 1.000.000,-</td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>John Doe</td>
-                <td>1 April 2018</td>
-                <td>Uang</td>
-                <td>Rp 1.000.000,-</td>
+            @endforeach
               </tr>
             </tbody>
           </table>

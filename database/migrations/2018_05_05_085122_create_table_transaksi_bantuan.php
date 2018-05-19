@@ -14,20 +14,20 @@ class CreateTableTransaksiBantuan extends Migration
     {
         Schema::create('transaksi_bantuan', function (Blueprint $table) {
             $table->increments('id_bantuan');
-            $table->integer('id_admin')->unsigned();
+            // $table->integer('id_admin')->unsigned();
             $table->string('nama_donatur',100);
             $table->timestamps();
             $table->string('jenis_bantuan',50);
             $table->integer('jumlah_bantuan');
         });
 
-        Schema::table('transaksi_bantuan', function (Blueprint $table) {
-            $table->foreign('id_admin')
-            ->references('id_admin')
-            ->on('admin')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-        });
+        // Schema::table('transaksi_bantuan', function (Blueprint $table) {
+        //     $table->foreign('id_admin')
+        //     ->references('id_admin')
+        //     ->on('admin')
+        //     ->onDelete('cascade')
+        //     ->onUpdate('cascade');
+        // });
     }
 
     /**
