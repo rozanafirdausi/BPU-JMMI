@@ -98,32 +98,32 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="{{ action('KeuanganController@store') }}" method="post">
+                <form action="/keuangan" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
                       <label for="tanggal">Tanggal : </label>
-                      <input type="text" class="form-control" id="tanggal" placeholder="masukkan tanggal..">
+                      <input name="tanggal" type="text" class="form-control" id="tanggal" placeholder="masukkan tanggal..">
                     </div>
                     <div class="form-group">
                       <label for="item">Item Pemasukan/Pengeluaran : </label>
-                      <input type="text" class="form-control" id="item" placeholder="masukkan item pemasukan/pengeluaran..">
+                      <input name="item_pengeluaran_pemasukan" type="text" class="form-control" id="item" placeholder="masukkan item pemasukan/pengeluaran..">
                     </div>
                     <div class="form-group">
                       <label for="debit">Debit : </label>
-                      <input type="text" class="form-control" id="debit" placeholder="masukkan jumlah debit..">
+                      <input name="debit" type="text" class="form-control" id="debit" placeholder="masukkan jumlah debit..">
                     </div>
                     <div class="form-group">
                       <label for="kredit">Kredit : </label>
-                      <input type="text" class="form-control" id="kredit" placeholder="masukkan jumlah kredit..">
+                      <input name="kredit" type="text" class="form-control" id="kredit" placeholder="masukkan jumlah kredit..">
                     </div>
                     <div class="form-group">
                       <label for="jumlah-uang">Jumlah Uang : </label>
-                      <input type="text" class="form-control" id="jumlah-uang" placeholder="masukkan jumlah uang..">
+                      <input name="jumlah_uang" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan jumlah uang..">
                     </div>
                     <div class="form-group">
                       <label for="keterangan">Keterangan : </label>
-                      <input type="text" class="form-control" id="keterangan" placeholder="masukkan keterangan..">
+                      <input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="masukkan keterangan..">
                     </div>
                   
                   <div class="modal-footer">
@@ -135,6 +135,55 @@
             </div>
           </div>
         </div>
+        @foreach ($list_keuangan as $keuangan)
+        <div class="modal fade" id="edit-modal-{{$keuangan->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Edit Rincian Keuangan</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="{{URL::to('/keuangan/'.$keuangan->id.'/update')}}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
+                    <div class="form-group">
+                      <label for="tanggal">Tanggal : </label>
+                      <input name="tanggal" type="text" class="form-control" id="tanggal" placeholder="masukkan tanggal.." value="{{ $keuangan->tanggal }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="item">Item Pemasukan/Pengeluaran : </label>
+                      <input name="item_pengeluaran_pemasukan" type="text" class="form-control" id="item" placeholder="masukkan item pemasukan/pengeluaran.." value="{{ $keuangan->item_pengeluaran_pemasukan }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="debit">Debit : </label>
+                      <input name="debit" type="text" class="form-control" id="debit" placeholder="masukkan jumlah debit.." value="{{ $keuangan->debit }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="kredit">Kredit : </label>
+                      <input name="kredit" type="text" class="form-control" id="kredit" placeholder="masukkan jumlah kredit.." value="{{ $keuangan->kredit }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="jumlah-uang">Jumlah Uang : </label>
+                      <input name="jumlah_uang" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan jumlah uang.." value="{{ $keuangan->jumlah_uang }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="keterangan">Keterangan : </label>
+                      <input name="keterangan" type="text" class="form-control" id="keterangan" placeholder="masukkan keterangan.." value="{{ $keuangan->keterangan }}">
+                    </div>
+                  
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endforeach
         <div class="panel-body">
           <table class="table table-striped table-bordered table-list">
             <thead>
@@ -149,42 +198,24 @@
               </tr> 
             </thead>
             <tbody>
+              @foreach ($list_keuangan as $keuangan)
               <tr>
                 <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                    <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$keuangan->id}}" href="{{URL::to('/keuangan/'.$keuangan->id)}}" method="get">
+                        <em class="fa fa-pencil">
+                        </em>
+                    </a>
+                  </form>
+                  <form action="/keuangan/{{$keuangan->id}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
                 </td>
-                <td>1/4/2018</td>
-                <td>Modal awal</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Rp 0,-</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Kas Pengurus</td>
+                <td>{{ $keuangan->tanggal }}</td>
+                <td>{{ $keuangan->item_pengeluaran_pemasukan }}</td>
+                <td>{{ $keuangan->debit}}</td>
+                <td>{{ $keuangan->kredit }}</td>
+                <td>{{ $keuangan->jumlah_uang }}</td>
+                <td>{{ $keuangan->keterangan }}</td>
               </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>1/4/2018</td>
-                <td>Modal awal</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Rp 0,-</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Kas Pengurus</td>
-              </tr>
-              <tr>
-                <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                <td>1/4/2018</td>
-                <td>Modal awal</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Rp 0,-</td>
-                <td>Rp 1.000.000,-</td>
-                <td>Kas Pengurus</td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
       

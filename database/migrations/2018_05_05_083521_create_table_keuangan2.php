@@ -16,7 +16,7 @@ class CreateTableKeuangan2 extends Migration
             $table->increments('id');
             $table->integer('id_admin')->unsigned();
             $table->date('tanggal');
-            $table->string('item_pengeluaran/pemasukan',50);
+            $table->string('item_pengeluaran_pemasukan',50);
             $table->integer('debit');
             $table->integer('kredit');
             $table->integer('jumlah_uang');

@@ -39,7 +39,14 @@ Route::get('/desaBinaan/{id_desa_binaan}', 'DesaBinaanController@edit');
 Route::post('/desaBinaan/{id_desa_binaan}/update', 'DesaBinaanController@update');
 
 Route::get('/keuangan', 'KeuanganController@index');
+// Route::get('/keuangan/create', 'KeuanganController@create');
 Route::post('/keuangan', 'KeuanganController@store');
+Route::post('/keuangan/{id}', 'KeuanganController@destroy');
+Route::get('/keuangan/{id}', 'KeuanganController@edit');
+Route::post('/keuangan/{id}/update', 'KeuanganController@update');
+
+// Route::get('/keuangan', 'KeuanganController@index');
+// Route::post('/keuangan', 'KeuanganController@store');
 Route::get('/penjualan', 'PenjualanController@index');
 Route::post('/penjualan', 'PenjualanController@store');
 Route::get('/bantuan', 'BantuanController@index');
