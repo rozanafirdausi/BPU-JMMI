@@ -8,9 +8,14 @@ class Penjualan extends Model
 {
     //
     protected $table = 'transaksi_penjualan';
-    
+    protected $primaryKey = 'id_penjualan';
     protected $fillable = [
     	'id_admin',
     	'jumlah_terjual'
     ];
+
+    public function hobi()
+    {
+    	return $this->belongsToMany('App\Barang','transaksipenjualan_barang','id_penjualan','id_barang')->withTimeStamps();
+    }
 }

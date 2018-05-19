@@ -18,8 +18,8 @@ class Barang extends Model
     	'stok'
     ];
 
-    // public function transaksipenjualan_barang()
-    // {
-    	
-    // }
+    public function transaksipenjualan()
+    {
+    	return $this->belongsToMany('App\Penjualan','transaksipenjualan_barang','id_barang','id_penjualan');
+    }
 }
