@@ -32,7 +32,7 @@ Route::get('desaBinaan/create', 'DesaBinaanController@create');
 Route::post('/desaBinaan', 'DesaBinaanController@store');
 Route::post('/desaBinaan/{id_desa_binaan}', 'DesaBinaanController@destroy');
 Route::get('/desaBinaan/{id_desa_binaan}/edit', 'DesaBinaanController@edit');
-Route::post('/desaBinaan/{id_desa_binaan}', 'DesaBinaanController@update');
+Route::post('/desaBinaan/{id_desa_binaan}/update', 'DesaBinaanController@update');
 Route::get('/keuangan', 'KeuanganController@index');
 Route::post('/keuangan', 'KeuanganController@store');
 Route::get('/penjualan', 'PenjualanController@index');
