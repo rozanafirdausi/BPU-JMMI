@@ -7,6 +7,8 @@ use App\Http\Requests;
 use App\Jadwal;
 use App\Admin;
 use App\DesaBinaan;
+use App\JadwalPengurus;
+use App\Pengurus;
 
 class JadwalController extends Controller
 {
@@ -14,16 +16,16 @@ class JadwalController extends Controller
     {
     	$desaBinaan = DesaBinaan::all();
     	$jadwal = Jadwal::all();
-    	foreach ($jadwal as $jadwals) {
-    		$jadwals->nama_desa_binaan = DesaBinaan::select('nama_desa_binaan')->where('id_desa_binaan','$jadwals->id_desa_binaan_jadwal');    		
-    	}  	
 
     	return view('jadwalMengajar.adminJadwal', compact('desaBinaan','jadwal'));
     }  
 
     public function user()
     {
-        return view('user.userJadwal');
+    	$desaBinaan = DesaBinaan::all();
+    	$jadwal = Jadwal::all();
+
+    	return view('user.userJadwal', compact('desaBinaan','jadwal'));
     }
 
     public function store(Request $request)
@@ -58,5 +60,26 @@ class JadwalController extends Controller
     {
     	$jadwal = Jadwal::where('id_jadwal_mengajar',$id)->delete();
     	return back();
+    }
+
+    public function daftar(Request $request, $id)
+    {
+    	$daftar['id_jadwal_mengajar'] = $id;
+    	$daftar['id_pengurus'] = 1;
+
+    	JadwalPengurus::create($daftar);
+    	return redirect('userJadwal');
+    }
+
+    public function terdaftar()
+    {    	
+    	$jadwalTerdaftar = JadwalPengurus::where('id_pengurus',1)->get();
+    	return view('user.userJadwalSaya', compact('jadwalTerdaftar')); 
+    }
+
+    public function terdaftarDestroy($id)
+    {
+    	$jadwal = JadwalPengurus::where('id_jadwal_pengurus',$id)->delete();
+		return back();
     }
 }

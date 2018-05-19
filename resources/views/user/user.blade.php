@@ -82,7 +82,7 @@
       <div class="row">
         <div class="col-md-4 service-item">
           <div class="service-icon"><i class="fa fa-calendar"></i></div>
-          <h4 class="service-title"><a href=""><br>Jadwal Mengajar</a></h4>
+          <h4 class="service-title"><a href="userJadwal"><br>Jadwal Mengajar</a></h4>
           <!-- <p class="service-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p> -->
         </div>
       </div>

@@ -18,11 +18,15 @@ Route::get('/', 'PagesController@homepage');
 
 Route::post('/admin', 'PagesController@admin');
 Route::get('/admin', 'PagesController@admin');
+
 Route::post('/user', 'PagesController@user');
 Route::get('/user', 'PagesController@user');
 
 Route::get('/adminJadwal', 'JadwalController@admin');
 Route::get('/userJadwal', 'JadwalController@user');
+Route::get('/userJadwalTerdaftar', 'JadwalController@terdaftar');
+Route::post('/userJadwalTerdaftar/{id_jadwal_terdaftar}', 'JadwalController@terdaftarDestroy');
+
 Route::get('/absensi', 'AbsensiController@index');
 Route::post('/absensi', 'AbsensiController@store');
 
@@ -57,7 +61,8 @@ Route::post('/bantuan/{id_bantuan}', 'BantuanController@destroy');
 
 Route::post('/jadwal', 'JadwalController@store');
 Route::post('/jadwal/{id_jadwal_mengajar}/update', 'JadwalController@update');
-Route::post('jadwal/{id_jadwal_mengajar}', 'JadwalController@destroy');
+Route::post('/jadwal/{id_jadwal_mengajar}', 'JadwalController@destroy');
+Route::post('/jadwal/{id_jadwal_mengajar}/daftar', 'JadwalController@daftar');
 
 Route::get('/about', function () {
     return view('about');

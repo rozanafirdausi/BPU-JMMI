@@ -15,4 +15,9 @@ class DesaBinaan extends Model
         'telp_contact_person',
         'jumlah_warga'
     ];
+
+    public function jadwal()
+    {
+        return $this->hasMany('App\Jadwal','id_desa_binaan');
+    }
 }

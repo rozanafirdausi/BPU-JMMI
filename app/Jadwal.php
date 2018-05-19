@@ -16,4 +16,15 @@ class Jadwal extends Model
     	'waktu',
     	'tempat',
     ];
+
+    public function pengurus()
+    {
+        return $this->hasMany('App\JadwalPengurus','id_jadwal_mengajar');
+    }
+
+    public function desaBinaan()
+    {
+        return $this->belongsTo('App\DesaBinaan', 'id_desa_binaan_jadwal');
+    }
+
 }

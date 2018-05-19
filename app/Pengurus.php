@@ -16,4 +16,10 @@ class Pengurus extends Model
     	'password_pengurus',
     	'jenis_kelamin',
     ];
+
+    public function jadwal()
+    {
+        return $this->hasMany('App\JadwalPengurus','id_pengurus');
+    }    
+    
 }

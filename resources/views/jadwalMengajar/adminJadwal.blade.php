@@ -200,9 +200,9 @@
                   </a>
                 </td>
                 
-                <td>{{ $jadwals->tanggal}}</td>
-                <td>{{ $jadwals->waktu}}</td>
-                <td>{{ $jadwals->id_desa_binaan_jadwal}}</td>
+                <td>{{ $jadwals->tanggal }} </td>
+                <td>{{ $jadwals->waktu }} </td>
+                <td>{{ $jadwals->desaBinaan->nama_desa_binaan }}</td>
                 <td>{{ $jadwals->tempat}}</td>
 
               </tr>
