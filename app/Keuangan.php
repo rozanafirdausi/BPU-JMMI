@@ -11,10 +11,15 @@ class Keuangan extends Model
     protected $fillable = [
     	'id_admin',
     	'tanggal',
-    	'item_pengeluaran/pemasukan',
+    	'item_pengeluaran_pemasukan',
     	'debit',
     	'kredit',
     	'jumlah_uang',
     	'keterangan',
     ];
+
+    public function admin()
+    {
+        return $this->belongsTo('App\Admin', 'id_admin');
+    }
 }

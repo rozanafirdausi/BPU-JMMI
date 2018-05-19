@@ -22,8 +22,6 @@ class CreateTableAdmin extends Migration
             $table->enum('jenis_kelamin',['L','P']);
             $table->timestamps();
         });
-
-        
     }
 
     /**

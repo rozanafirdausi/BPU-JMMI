@@ -17,8 +17,8 @@ class Admin extends Model
         'jenis_kelamin',
     ];
 
-    // public function keuangan()
-    // {
-    //     return $this->hasMany('App\Keuangan','id_admin');
-    // }
+    public function keuangan()
+    {
+        return $this->hasMany('App\Keuangan','id_admin');
+    }
 }
