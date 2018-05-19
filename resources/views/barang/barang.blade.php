@@ -126,7 +126,8 @@
           </div>
         </div>
 
-        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        @foreach($data as $barang)
+        <div class="modal fade" id="edit-modal-{{$barang->id_barang}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -136,25 +137,27 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="{{ action('BarangController@store') }}" method="post">
+                <form action="{{URL::to('barang/'.$barang->id_barang)}}" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
+                  
                     <div class="form-group">
                       <label for="item">Nama Barang : </label>
-                      <input type="text" name="nama_barang" class="form-control" id="item" placeholder="masukkan nama barang">
+                      <input type="text" name="nama_barang" class="form-control" id="item" placeholder="masukkan nama barang" value="{{ $barang->nama_barang }}">
                     </div>
                     <div class="form-group">
                       <label for="debit">Harga Barang : </label>
-                      <input type="text" name="harga_barang" class="form-control" id="debit" placeholder="masukkan harga barang">
+                      <input type="text" name="harga_barang" class="form-control" id="debit" placeholder="masukkan harga barang" value="{{ $barang->harga_barang }}">
                     </div>
                     <div class="form-group">
                       <label for="kredit">Harga Jual : </label>
-                      <input type="text" name="harga_jual" class="form-control" id="kredit" placeholder="masukkan harga jual">
+                      <input type="text" name="harga_jual" class="form-control" id="kredit" placeholder="masukkan harga jual" value="{{ $barang->harga_jual }}">
                     </div>
                     <div class="form-group">
                       <label for="jumlah-uang">Stok : </label>
-                      <input type="text" name="stok" class="form-control" id="jumlah-uang" placeholder="masukkan stok">
+                      <input type="text" name="stok" class="form-control" id="jumlah-uang" placeholder="masukkan stok" value="{{ $barang->stok }}">
                     </div>
+                    
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -164,6 +167,7 @@
             </div>
           </div>
         </div>
+        @endforeach
 
         <div class="panel-body">
           <table class="table table-striped table-bordered table-list">
@@ -177,18 +181,18 @@
               </tr> 
             </thead>
             <tbody>
+            @foreach($data as $barang)
               <tr>
                 <td align="center">
-                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                </td>
-                @foreach($data as $barang)
+                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$barang->id_barang}}" href="{{URL::to('barang/'.$barang->id_barang)}}" method="get"><em class="fa fa-pencil"></em></a>
+                  <form action="/desaBinaan/{{$desaBinaan->id_desa_binaan}}" method="POST">{{ csrf_field() }}<a class="btn btn-danger"><button type="submit"><em class="fa fa-trash"></em></button></a></form>
+                </td>                
                 <td>{{$barang->nama_barang}}</td>
                 <td>{{$barang->harga_barang}}</td>
                 <td>{{$barang->harga_jual}}</td>
-                <td>{{$barang->stok}}</td>
-                @endforeach
+                <td>{{$barang->stok}}</td>                
               </tr>
+              @endforeach
             </tbody>
           </table>
       
