@@ -44,6 +44,13 @@ class CreateTableTransaksipenjualanBarang extends Migration
      */
     public function down()
     {
+        Schema::table('transaksipenjualan_barang', function(Blueprint $table){
+            $table->dropForeign('transaksipenjualan_barang_id_penjualan_barang_foreign');
+            
+            $table->dropForeign('transaksipenjualan_barang_id_barang_foreign');
+        });
+
+
         Schema::drop('transaksipenjualan_barang');
     }
 }

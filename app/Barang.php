@@ -17,4 +17,9 @@ class Barang extends Model
     	'harga_jual',
     	'stok'
     ];
+
+    // public function transaksipenjualan_barang()
+    // {
+    	
+    // }
 }
