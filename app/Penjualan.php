@@ -14,8 +14,8 @@ class Penjualan extends Model
     	'jumlah_terjual'
     ];
 
-    public function hobi()
+    public function barang()
     {
-    	return $this->belongsToMany('App\Barang','transaksipenjualan_barang','id_penjualan','id_barang')->withTimeStamps();
+    	return $this->belongsToMany('App\Barang')->withTimeStamps();
     }
 }

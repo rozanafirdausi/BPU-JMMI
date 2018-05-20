@@ -18,7 +18,7 @@ class Barang extends Model
     	'stok'
     ];
 
-    public function transaksipenjualan()
+    public function penjualan()
     {
     	return $this->belongsToMany('App\Penjualan','transaksipenjualan_barang','id_barang','id_penjualan');
     }

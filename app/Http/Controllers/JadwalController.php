@@ -16,7 +16,6 @@ class JadwalController extends Controller
     {
     	$desaBinaan = DesaBinaan::all();
     	$jadwal = Jadwal::all();
-
     	return view('jadwalMengajar.adminJadwal', compact('desaBinaan','jadwal'));
     }  
 

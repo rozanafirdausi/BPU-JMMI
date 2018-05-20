@@ -101,6 +101,14 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
+                      <label for="barang">Barang :</label>
+                      <select name="nama_barang" class="form-control" id="exampleFormControlSelect1">
+                        @foreach ($barangs as $barang)
+                        <option value="{{ $barang->id_barang }}">{{ $barang->nama_barang }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="form-group">
                       <label for="jumlah">Jumlah Terjual : </label>
                       <input type="text" name="jumlah_terjual" class="form-control" id="jumlah" placeholder="masukkan jumlah terjual..">
                     </div>
@@ -155,7 +163,6 @@
                 <td>12000</td>
                 <td>13000</td>
                 <td>12</td>
-                <td></td>
               </tr>
               
             </tbody>
