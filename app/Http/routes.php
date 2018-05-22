@@ -22,6 +22,11 @@ Route::get('/admin', 'PagesController@admin');
 Route::post('/user', 'PagesController@user');
 Route::get('/user', 'PagesController@user');
 
+Route::get('/kelolaadmin','AdminController@index');
+Route::post('/kelolaadmin', 'AdminController@store');
+Route::post('/kelolaadmin/{id_admin}', 'AdminController@destroy');
+
+
 Route::get('/adminJadwal', 'JadwalController@admin');
 Route::get('/userJadwal', 'JadwalController@user');
 Route::get('/userJadwalTerdaftar', 'JadwalController@terdaftar');
