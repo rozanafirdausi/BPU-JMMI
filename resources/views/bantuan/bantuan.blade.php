@@ -102,16 +102,16 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="nama">Nama Donatur : </label>
-                      <input name="nama_donatur" type="text" class="form-control" id="nama" placeholder="masukkan nama donatur..">
+                      <label for="nama"><span style="color: red">*</span> Nama Donatur : </label>
+                      <input name="nama_donatur" type="text" class="form-control" id="nama" placeholder="masukkan nama donatur.." required>
                     </div>
                     <div class="form-group">
-                      <label for="jenis">Jenis Donasi : </label>
-                      <input name="jenis_donasi" type="text" class="form-control" id="jenis" placeholder="masukkan jneis donasi..">
+                      <label for="jenis"><span style="color: red">*</span> Jenis Donasi : </label>
+                      <input name="jenis_donasi" type="text" class="form-control" id="jenis" placeholder="masukkan jneis donasi.." required>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah">Jumlah Donasi : </label>
-                      <input name="jumlah_donasi" type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi..">
+                      <label for="jumlah"><span style="color: red">*</span> Jumlah Donasi : </label>
+                      <input name="jumlah_donasi" type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi.." required>
                     </div>
                   
               </div>
@@ -143,16 +143,16 @@
                       <input name="nama_donatur" type="text" class="form-control" id="nama" placeholder="masukkan nama donatur.." value="{{ $bantuans->nama_donatur }}"> -->
                     </div>
                     <div class="form-group">
-                      <label for="nama">Nama Donatur : </label>
-                      <input name="nama_donatur" type="text" class="form-control" id="nama" placeholder="masukkan nama donatur.." value="{{ $bantuans->nama_donatur }}">
+                      <label for="nama"><span style="color: red">*</span> Nama Donatur : </label>
+                      <input name="nama_donatur" type="text" class="form-control" id="nama" placeholder="masukkan nama donatur.." value="{{ $bantuans->nama_donatur }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="jenis">Jenis Donasi : </label>
-                      <input name="jenis_donasi" type="text" class="form-control" id="jenis" placeholder="masukkan jenis donasi.." value="{{ $bantuans->jenis_bantuan }}">
+                      <label for="jenis"><span style="color: red">*</span> Jenis Donasi : </label>
+                      <input name="jenis_donasi" type="text" class="form-control" id="jenis" placeholder="masukkan jenis donasi.." value="{{ $bantuans->jenis_bantuan }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah">Jumlah Donasi : </label>
-                      <input name="jumlah_donasi" type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi.." value="{{ $bantuans->jumlah_bantuan }}">
+                      <label for="jumlah"><span style="color: red">*</span> Jumlah Donasi : </label>
+                      <input name="jumlah_donasi" type="text" class="form-control" id="jumlah" placeholder="masukkan jumlah donasi.." value="{{ $bantuans->jumlah_bantuan }}" required>
                     </div>
                   
               </div>

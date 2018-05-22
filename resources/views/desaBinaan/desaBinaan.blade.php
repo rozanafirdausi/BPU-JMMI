@@ -102,24 +102,24 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="item">Nama Desa Binaan : </label>
-                      <input name="nama_desa_binaan" type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan">
+                      <label for="item"><span style="color: red">*</span> Nama Desa Binaan : </label>
+                      <input name="nama_desa_binaan" type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan" required>
                     </div>
                     <div class="form-group">
-                      <label for="debit">Alamat Desa Binaan : </label>
-                      <input name="alamat_desa_binaan" type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan">
+                      <label for="debit"><span style="color: red">*</span> Alamat Desa Binaan : </label>
+                      <input name="alamat_desa_binaan" type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan" required>
                     </div>
                     <div class="form-group">
-                      <label for="kredit">CP : </label>
-                      <input name="contact_person" type="text" class="form-control" id="kredit" placeholder="masukkan nama cp">
+                      <label for="kredit"><span style="color: red">*</span> CP : </label>
+                      <input name="contact_person" type="text" class="form-control" id="kredit" placeholder="masukkan nama cp" required>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah-uang">Telp CP : </label>
-                      <input name="telp_contact_person" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp">
+                      <label for="jumlah-uang"><span style="color: red">*</span> Telp CP : </label>
+                      <input name="telp_contact_person" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp" required>
                     </div>
                     <div class="form-group">
-                      <label for="keterangan">Jumlah Warga : </label>
-                      <input name="jumlah_warga" type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga">
+                      <label for="keterangan"><span style="color: red">*</span> Jumlah Warga : </label>
+                      <input name="jumlah_warga" type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga" required>
                     </div>
                 
               </div>
@@ -146,24 +146,24 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="item">Nama Desa Binaan : </label>
-                      <input name="nama_desa_binaan" type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan" value="{{ $desa->nama_desa_binaan }}">
+                      <label for="item"><span style="color: red">*</span> Nama Desa Binaan : </label>
+                      <input name="nama_desa_binaan" type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan" value="{{ $desa->nama_desa_binaan }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="debit">Alamat Desa Binaan : </label>
-                      <input name="alamat_desa_binaan" type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan" value="{{ $desa->alamat_desa_binaan }}">
+                      <label for="debit"><span style="color: red">*</span> Alamat Desa Binaan : </label>
+                      <input name="alamat_desa_binaan" type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan" value="{{ $desa->alamat_desa_binaan }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="kredit">CP : </label>
-                      <input name="contact_person" type="text" class="form-control" id="kredit" placeholder="masukkan nama cp" value="{{ $desa->contact_person }}">
+                      <label for="kredit"><span style="color: red">*</span> CP : </label>
+                      <input name="contact_person" type="text" class="form-control" id="kredit" placeholder="masukkan nama cp" value="{{ $desa->contact_person }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah-uang">Telp CP : </label>
-                      <input name="telp_contact_person" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp" value="{{ $desa->telp_contact_person }}">
+                      <label for="jumlah-uang"><span style="color: red">*</span> Telp CP : </label>
+                      <input name="telp_contact_person" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp" value="{{ $desa->telp_contact_person }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="keterangan">Jumlah Warga : </label>
-                      <input name="jumlah_warga" type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga" value="{{ $desa->jumlah_warga }}">
+                      <label for="keterangan"><span style="color: red">*</span> Jumlah Warga : </label>
+                      <input name="jumlah_warga" type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga" value="{{ $desa->jumlah_warga }}" required>
                     </div>
               </div>
               <div class="modal-footer">
