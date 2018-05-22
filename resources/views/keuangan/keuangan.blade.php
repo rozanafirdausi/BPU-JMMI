@@ -102,24 +102,24 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="tanggal">Tanggal : </label>
-                      <input name="tanggal" type="text" class="form-control" id="tanggal" placeholder="masukkan tanggal..">
+                      <label for="tanggal"><span style="color: red">*</span> Tanggal : </label>
+                      <input name="tanggal" type="text" class="form-control" id="tanggal" placeholder="masukkan tanggal.." required>
                     </div>
                     <div class="form-group">
-                      <label for="item">Item Pemasukan/Pengeluaran : </label>
-                      <input name="item_pengeluaran_pemasukan" type="text" class="form-control" id="item" placeholder="masukkan item pemasukan/pengeluaran..">
+                      <label for="item"><span style="color: red">*</span> Item Pemasukan/Pengeluaran : </label>
+                      <input name="item_pengeluaran_pemasukan" type="text" class="form-control" id="item" placeholder="masukkan item pemasukan/pengeluaran.." required>
                     </div>
                     <div class="form-group">
-                      <label for="debit">Debit : </label>
-                      <input name="debit" type="text" class="form-control" id="debit" placeholder="masukkan jumlah debit..">
+                      <label for="debit"><span style="color: red">*</span> Debit : </label>
+                      <input name="debit" type="text" class="form-control" id="debit" placeholder="masukkan jumlah debit.." required>
                     </div>
                     <div class="form-group">
-                      <label for="kredit">Kredit : </label>
-                      <input name="kredit" type="text" class="form-control" id="kredit" placeholder="masukkan jumlah kredit..">
+                      <label for="kredit"><span style="color: red">*</span> Kredit : </label>
+                      <input name="kredit" type="text" class="form-control" id="kredit" placeholder="masukkan jumlah kredit.." required>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah-uang">Jumlah Uang : </label>
-                      <input name="jumlah_uang" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan jumlah uang..">
+                      <label for="jumlah-uang"><span style="color: red">*</span> Jumlah Uang : </label>
+                      <input name="jumlah_uang" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan jumlah uang.." required>
                     </div>
                     <div class="form-group">
                       <label for="keterangan">Keterangan : </label>
@@ -150,24 +150,24 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="tanggal">Tanggal : </label>
-                      <input name="tanggal" type="text" class="form-control" id="tanggal" placeholder="masukkan tanggal.." value="{{ $keuangan->tanggal }}">
+                      <label for="tanggal"><span style="color: red">*</span> Tanggal : </label>
+                      <input name="tanggal" type="text" class="form-control" id="tanggal" placeholder="masukkan tanggal.." value="{{ $keuangan->tanggal }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="item">Item Pemasukan/Pengeluaran : </label>
-                      <input name="item_pengeluaran_pemasukan" type="text" class="form-control" id="item" placeholder="masukkan item pemasukan/pengeluaran.." value="{{ $keuangan->item_pengeluaran_pemasukan }}">
+                      <label for="item"><span style="color: red">*</span> Item Pemasukan/Pengeluaran : </label>
+                      <input name="item_pengeluaran_pemasukan" type="text" class="form-control" id="item" placeholder="masukkan item pemasukan/pengeluaran.." value="{{ $keuangan->item_pengeluaran_pemasukan }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="debit">Debit : </label>
-                      <input name="debit" type="text" class="form-control" id="debit" placeholder="masukkan jumlah debit.." value="{{ $keuangan->debit }}">
+                      <label for="debit"><span style="color: red">*</span> Debit : </label>
+                      <input name="debit" type="text" class="form-control" id="debit" placeholder="masukkan jumlah debit.." value="{{ $keuangan->debit }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="kredit">Kredit : </label>
-                      <input name="kredit" type="text" class="form-control" id="kredit" placeholder="masukkan jumlah kredit.." value="{{ $keuangan->kredit }}">
+                      <label for="kredit"><span style="color: red">*</span> Kredit : </label>
+                      <input name="kredit" type="text" class="form-control" id="kredit" placeholder="masukkan jumlah kredit.." value="{{ $keuangan->kredit }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah-uang">Jumlah Uang : </label>
-                      <input name="jumlah_uang" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan jumlah uang.." value="{{ $keuangan->jumlah_uang }}">
+                      <label for="jumlah-uang"><span style="color: red">*</span> Jumlah Uang : </label>
+                      <input name="jumlah_uang" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan jumlah uang.." value="{{ $keuangan->jumlah_uang }}" required>
                     </div>
                     <div class="form-group">
                       <label for="keterangan">Keterangan : </label>

@@ -101,20 +101,20 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="item">Nama Barang : </label>
-                      <input type="text" name="nama_barang" class="form-control" id="item" placeholder="masukkan nama barang">
+                      <label for="item"><span style="color: red">*</span> Nama Barang : </label>
+                      <input type="text" name="nama_barang" class="form-control" id="item" placeholder="masukkan nama barang" required>
                     </div>
                     <div class="form-group">
-                      <label for="debit">Harga Barang : </label>
-                      <input type="text" name="harga_barang" class="form-control" id="debit" placeholder="masukkan harga barang">
+                      <label for="debit"><span style="color: red">*</span> Harga Barang : </label>
+                      <input type="text" name="harga_barang" class="form-control" id="debit" placeholder="masukkan harga barang" required>
                     </div>
                     <div class="form-group">
-                      <label for="kredit">Harga Jual : </label>
-                      <input type="text" name="harga_jual" class="form-control" id="kredit" placeholder="masukkan harga jual">
+                      <label for="kredit"><span style="color: red">*</span> Harga Jual : </label>
+                      <input type="text" name="harga_jual" class="form-control" id="kredit" placeholder="masukkan harga jual" required>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah-uang">Stok : </label>
-                      <input type="text" name="stok" class="form-control" id="jumlah-uang" placeholder="masukkan stok">
+                      <label for="jumlah-uang"><span style="color: red">*</span> Stok : </label>
+                      <input type="text" name="stok" class="form-control" id="jumlah-uang" placeholder="masukkan stok" required>
                     </div>
               </div>
               <div class="modal-footer">
@@ -142,20 +142,20 @@
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                   
                     <div class="form-group">
-                      <label for="item">Nama Barang : </label>
-                      <input type="text" name="nama_barang" class="form-control" id="item" placeholder="masukkan nama barang" value="{{ $barang->nama_barang }}">
+                      <label for="item"><span style="color: red">*</span> Nama Barang : </label>
+                      <input type="text" name="nama_barang" class="form-control" id="item" placeholder="masukkan nama barang" value="{{ $barang->nama_barang }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="debit">Harga Barang : </label>
-                      <input type="text" name="harga_barang" class="form-control" id="debit" placeholder="masukkan harga barang" value="{{ $barang->harga_barang }}">
+                      <label for="debit"><span style="color: red">*</span> Harga Barang : </label>
+                      <input type="text" name="harga_barang" class="form-control" id="debit" placeholder="masukkan harga barang" value="{{ $barang->harga_barang }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="kredit">Harga Jual : </label>
-                      <input type="text" name="harga_jual" class="form-control" id="kredit" placeholder="masukkan harga jual" value="{{ $barang->harga_jual }}">
+                      <label for="kredit"><span style="color: red">*</span> Harga Jual : </label>
+                      <input type="text" name="harga_jual" class="form-control" id="kredit" placeholder="masukkan harga jual" value="{{ $barang->harga_jual }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah-uang">Stok : </label>
-                      <input type="text" name="stok" class="form-control" id="jumlah-uang" placeholder="masukkan stok" value="{{ $barang->stok }}">
+                      <label for="jumlah-uang"><span style="color: red">*</span> Stok : </label>
+                      <input type="text" name="stok" class="form-control" id="jumlah-uang" placeholder="masukkan stok" value="{{ $barang->stok }}" required>
                     </div>
                     
               </div>

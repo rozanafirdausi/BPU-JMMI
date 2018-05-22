@@ -110,8 +110,8 @@
                       <br>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah_warga">Jumlah Warga: </label>
-                      <input name="jumlah_warga" type="text" class="form-control" id="jumlah_warga" placeholder="masukkan jumlah warga..">
+                      <label for="jumlah_warga"><span style="color: red">*</span> Jumlah Warga: </label>
+                      <input name="jumlah_warga" type="text" class="form-control" id="jumlah_warga" placeholder="masukkan jumlah warga.." required>
                     </div>
               </div>
               <div class="modal-footer">
@@ -148,8 +148,8 @@
                       <br>
                     </div>
                     <div class="form-group">
-                      <label for="kredit">Jumlah Warga </label>
-                      <input type="text" class="form-control" id="kredit" placeholder="masukkan jumlah warga" name="jumlah_warga" value="{{ $absensis->jumlah_warga }}">
+                      <label for="kredit"><span style="color: red">*</span> Jumlah Warga :</label>
+                      <input type="text" class="form-control" id="kredit" placeholder="masukkan jumlah warga" name="jumlah_warga" value="{{ $absensis->jumlah_warga }}" required>
                     </div>
                 
               </div>

@@ -101,12 +101,12 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="nama">Tanggal : </label>
-                      <input name="tanggal" type="text" class="form-control" id="nama" placeholder="masukkan tanggal..">
+                      <label for="nama"><span style="color: red">*</span> Tanggal : </label>
+                      <input name="tanggal" type="text" class="form-control" id="nama" placeholder="masukkan tanggal.." required>
                     </div>
                     <div class="form-group">
-                      <label for="jenis">Waktu : </label>
-                      <input name="waktu" type="text" class="form-control" id="jenis" placeholder="masukkan waktu..">
+                      <label for="jenis"><span style="color: red">*</span> Waktu : </label>
+                      <input name="waktu" type="text" class="form-control" id="jenis" placeholder="masukkan waktu.." required>
                     </div>
                     <div class="form-group">
                       <label for="desaBinaan">Desa Binaan :</label>
@@ -117,8 +117,8 @@
                       </select>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah">Tempat : </label>
-                      <input name="tempat" type="text" class="form-control" id="jumlah" placeholder="masukkan tempat..">
+                      <label for="jumlah"><span style="color: red">*</span> Tempat : </label>
+                      <input name="tempat" type="text" class="form-control" id="jumlah" placeholder="masukkan tempat.." required>
                     </div>
                   
               </div>
@@ -147,12 +147,12 @@
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
-                      <label for="nama">Tanggal : </label>
-                      <input name="tanggal" type="text" class="form-control" id="nama" placeholder="masukkan tanggal.." value="{{ $jadwals->tanggal }}">
+                      <label for="nama"><span style="color: red">*</span> Tanggal : </label>
+                      <input name="tanggal" type="text" class="form-control" id="nama" placeholder="masukkan tanggal.." value="{{ $jadwals->tanggal }}" required>
                     </div>
                     <div class="form-group">
-                      <label for="jenis">Waktu : </label>
-                      <input name="waktu" type="text" class="form-control" id="jenis" placeholder="masukkan waktu.." value="{{ $jadwals->waktu }}">
+                      <label for="jenis"><span style="color: red">*</span> Waktu : </label>
+                      <input name="waktu" type="text" class="form-control" id="jenis" placeholder="masukkan waktu.." value="{{ $jadwals->waktu }}" required>
                     </div>
                     <div class="form-group">
                       <label for="desaBinaan">Desa Binaan :</label>
@@ -163,8 +163,8 @@
                       </select>
                     </div>
                     <div class="form-group">
-                      <label for="jumlah">Tempat : </label>
-                      <input name="tempat" type="text" class="form-control" id="jumlah" placeholder="masukkan tempat.." value="{{ $jadwals->tempat }}">
+                      <label for="jumlah"><span style="color: red">*</span> Tempat : </label>
+                      <input name="tempat" type="text" class="form-control" id="jumlah" placeholder="masukkan tempat.." value="{{ $jadwals->tempat }}" required>
                     </div>
                   
               </div>
