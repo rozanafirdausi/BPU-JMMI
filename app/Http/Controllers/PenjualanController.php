@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Penjualan;
+use App\Barang;
+use App\PenjualanBarang;
 
 class PenjualanController extends Controller
 {
@@ -15,7 +18,9 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        return view('penjualan.penjualan');
+        $data = Penjualan::all();
+        $barangs = Barang::all();
+        return view('penjualan.penjualan',compact('data','barangs'));
     }
 
     /**
@@ -25,7 +30,8 @@ class PenjualanController extends Controller
      */
     public function create()
     {
-        //
+        // $data = Barang::list('nama_barang','id_barang');
+        // return view('penjualan.penjualan',compact('data'));
     }
 
     /**
@@ -36,8 +42,15 @@ class PenjualanController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        dd($data);
+        $data['id_admin'] = 1;
+        $data['jumlah_terjual'] = $request->jumlah_terjual;
+        $data['nama_barang'] = (int)$request->nama_barang;
+        // $data->barang()->attach($request->input('barang'));
+        Penjualan::create($data);
+        return redirect('penjualan');
+
+        // $data = Barang::list('nama_barang','id_barang');
+        // return view('penjualan.penjualan',compact('data'));
     }
 
     /**

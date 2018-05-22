@@ -64,9 +64,10 @@
           <li><a href="absensi">Absensi</a></li>
           <li><a href="desaBinaan">Desa Binaan</a></li>
           <li class="test"><a href="adminJadwal">Jadwal Mengajar</a></li>
+          <li><a href="kelolaadmin">Kelola Admin</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
   </header>
@@ -97,9 +98,17 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="{{ action('PenjualanController@store') }}" method="post">
+                <form action="/penjualan" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
+                    <div class="form-group">
+                      <label for="barang">Barang :</label>
+                      <select name="nama_barang" class="form-control" id="exampleFormControlSelect1">
+                        @foreach ($barangs as $barang)
+                        <option value="{{ $barang->id_barang }}">{{ $barang->nama_barang }}</option>
+                        @endforeach
+                      </select>
+                    </div>
                     <div class="form-group">
                       <label for="jumlah">Jumlah Terjual : </label>
                       <input type="text" name="jumlah_terjual" class="form-control" id="jumlah" placeholder="masukkan jumlah terjual..">
@@ -123,28 +132,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
-                <table class="table table-striped table-bordered table-list">
-                  <thead>
-                    <tr>                        
-                        <th>Nama Barang</th>
-                        <th>Harga Barang</th>
-                        <th>Harga Jual</th>
-                        <th>Jumlah Terjual</th>
-                    </tr> 
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td align="center">
-                        Pensil
-                      </td>
-                      <td>12.000</td>
-                      <td>14.000</td>
-                      <td>5</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              
               <div class="modal-footer">
                 <button type="submit" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
               </div>
@@ -158,7 +146,11 @@
               <tr>
                   <th><em class="fa fa-cog"></em></th>
                   <th>Waktu Penjualan</th>
-                  <th>Barang</th>
+                  <!-- <th>Barang</th> -->
+                  <th>Nama Barang</th>
+                  <th>Harga Barang</th>
+                  <th>Harga Jual</th>
+                  <th>Jumlah Terjual</th>
               </tr> 
             </thead>
             <tbody>
@@ -168,7 +160,10 @@
                   <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                 </td>
                 <td>1 April 2018</td>
-                <td><button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#lihat-barang-modal">Lihat Barang</button></td>
+                <td>Pensil</td>
+                <td>12000</td>
+                <td>13000</td>
+                <td>12</td>
               </tr>
               
             </tbody>

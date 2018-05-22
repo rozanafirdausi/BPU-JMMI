@@ -64,9 +64,10 @@
           <li><a href="absensi">Absensi</a></li>
           <li><a href="desaBinaan">Desa Binaan</a></li>
           <li class="test"><a href="adminJadwal">Jadwal Mengajar</a></li>
+          <li><a href="kelolaadmin">Kelola Admin</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
   </header>

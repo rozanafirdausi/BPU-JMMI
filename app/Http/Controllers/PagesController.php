@@ -17,7 +17,7 @@ class PagesController extends Controller
     {
     	// $data = $request->all();
     	// dd($data);
-    	return view('admin.admin');
+    	return view('admin.pageadmin');
     }
 
     public function user()

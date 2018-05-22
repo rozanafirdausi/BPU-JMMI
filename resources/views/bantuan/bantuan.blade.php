@@ -64,9 +64,10 @@
           <li><a href="absensi">Absensi</a></li>
           <li><a href="desaBinaan">Desa Binaan</a></li>
           <li class="test"><a href="adminJadwal">Jadwal Mengajar</a></li>
+          <li><a href="kelolaadmin">Kelola Admin</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
   </header>
@@ -164,7 +165,7 @@
           <table class="table table-striped table-bordered table-list">
             <thead>
               <tr>
-                  <th><em class="fa fa-cog"></em></th>
+                  <!-- <th><em class="fa fa-cog"></em></th> -->
                   <th>Nama Donatur</th>
                   <th>Jenis Donasi</th>
                   <th>Jumlah Donasi</th>
@@ -173,14 +174,14 @@
             <tbody>
             @foreach($bantuan as $bantuans)
               <tr>
-                <td align="center">
+                <!-- <td align="center">
                   <a class="btn btn-default" data-toggle="modal" data-target="#list-bantuan-{{ $bantuans->id_bantuan }}">
                     <em class="fa fa-pencil"></em>
                   </a>
                   <a>
                     <form action="/bantuan/{{$bantuans->id_bantuan}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
                   </a>
-                </td>
+                </td> -->
                 <td>{{ $bantuans->nama_donatur }}</td>
                 <td>{{ $bantuans->jenis_bantuan }}</td>
                 <td>{{ $bantuans->jumlah_bantuan }}</td>
