@@ -192,17 +192,16 @@
               @foreach ($desaBinaan as $desa)
               <tr>
                 <td align="center">
-
-
-                  <!-- <form action="/desaBinaan/{{$desa->id_desa_binaan}}" method="get"> -->
+                  <div class="row">
+                    <div class="col-sm-4">
                     <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$desa->id_desa_binaan}}" href="{{URL::to('/desaBinaan/'.$desa->id_desa_binaan)}}" method="get">
                       <!-- <button class="btn btn-default" type="button" > -->
                         <em class="fa fa-pencil">
                         </em>
-                      
-                    </a>
-                  </form>
-                  <form action="/desaBinaan/{{$desa->id_desa_binaan}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
+                    </a></div>
+                    <div class="col-sm-4">
+                  <form action="/desaBinaan/{{$desa->id_desa_binaan}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form></div>
+                </div>
                 </td>
                 <td>{{ $desa->nama_desa_binaan }}</td>
                 <td>{{ $desa->alamat_desa_binaan }}</td>

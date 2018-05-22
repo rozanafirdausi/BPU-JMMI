@@ -75,7 +75,7 @@
 <body>
   <div id="preloader"></div>
   <div class="container fluid">
-    <h1>Data Desa Binaan BPU - JMMI 2018</h1>
+    <h1>Data Admin BPU - JMMI 2018</h1>
     <div class="col-sm-12">
       <div class="panel panel-default panel-table" id="table">
         <div class="panel-heading">
@@ -103,23 +103,23 @@
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
                       <label for="item">Nama Admin : </label>
-                      <input name="nama_admin" type="text" class="form-control" id="item" placeholder="masukkan nama desa binaan" required>
+                      <input name="nama_admin" type="text" class="form-control" id="item" placeholder="masukkan nama admin" required>
                     </div>
                     <div class="form-group">
                       <label for="debit">Email : </label>
-                      <input name="email_admin" type="text" class="form-control" id="debit" placeholder="masukkan alamat desa binaan" required>
+                      <input name="email_admin" type="text" class="form-control" id="debit" placeholder="masukkan email" required>
                     </div>
                     <div class="form-group">
                       <label for="kredit">No Telp : </label>
-                      <input name="notelp" type="text" class="form-control" id="kredit" placeholder="masukkan nama cp" required>
+                      <input name="notelp" type="text" class="form-control" id="kredit" placeholder="masukkan nomor telepon" required>
                     </div>
                     <div class="form-group">
                       <label for="jumlah-uang">Alamat : </label>
-                      <input name="alamat" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan no telp cp" required>
+                      <input name="alamat" type="text" class="form-control" id="jumlah-uang" placeholder="masukkan alamat" required>
                     </div>
                     <div class="form-group">
                       <label for="keterangan">Password : </label>
-                      <input name="password_admin" type="text" class="form-control" id="keterangan" placeholder="masukkan jumlah warga" required>
+                      <input name="password_admin" type="password" class="form-control" id="keterangan" placeholder="masukkan password" required>
                     </div>
                     <div class="form-group">
                       <label for="keterangan">Jenis Kelamin : </label><br>
@@ -161,7 +161,8 @@
                 <td>{{ $admins->email_admin }}</td>
                 <td>{{ $admins->notelp }}</td>
                 <td>{{ $admins->alamat }}</td>
-                <td>{{ $admins->password_admin }}</td>
+                <style>.hidetext { -webkit-text-security: disc; /* Default */ }</style>
+                <td class="hidetext">{{ $admins->password_admin }}</td>
                 <td>{{ $admins->jenis_kelamin }}</td>
               </tr>
               @endforeach

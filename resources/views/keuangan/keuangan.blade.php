@@ -202,12 +202,15 @@
               @foreach ($list_keuangan as $keuangan)
               <tr>
                 <td align="center">
+                  <div class="row">
+                  <div class="col-sm-4">
                     <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$keuangan->id}}" href="{{URL::to('/keuangan/'.$keuangan->id)}}" method="get">
                         <em class="fa fa-pencil">
                         </em>
-                    </a>
-                  </form>
-                  <form action="/keuangan/{{$keuangan->id}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
+                    </a></div>
+                  <div class="col-sm-4">
+                  <form action="/keuangan/{{$keuangan->id}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form></div>
+                  </div>
                 </td>
                 <td>{{ $keuangan->tanggal }}</td>
                 <td>{{ $keuangan->item_pengeluaran_pemasukan }}</td>

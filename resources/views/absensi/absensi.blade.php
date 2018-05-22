@@ -217,12 +217,13 @@
             @foreach ($absensi as $absensis)
               <tr>
                 <td align="center">
+                  <div class="row">
+                    <div class="col-sm-4">
                   <a class="btn btn-default" data-toggle="modal" data-target="#edit-absensi-{{$absensis->id_jadwal_absensi}}">
-                    <em class="fa fa-pencil"></em>
-                  </a>
-                  <a>
-                    <form action="{{URL::to('/absensi/'.$absensis->id_jadwal_absensi)}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
-                  </a>
+                    <em class="fa fa-pencil"></em></a></div>
+                  <div class="col-sm-4">
+                    <form action="{{URL::to('/absensi/'.$absensis->id_jadwal_absensi)}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form></div>
+                  </div>
                 </td>
                 <td>{{ $absensis->jadwal->desaBinaan->nama_desa_binaan}} - {{ $absensis->jadwal->tempat }}</td>
                 <td>

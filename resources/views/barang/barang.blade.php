@@ -184,11 +184,15 @@
             <tbody>
             @foreach($data as $barang)
               <tr>
-                <td align="center">
-                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$barang->id_barang}}" href="{{URL::to('/barang/'.$barang->id_barang)}}" method="get">
-                    <em class="fa fa-pencil"></em></a>
+                <td align="center" >
+                  <div class="row">
+                    <div class="col-sm-4">
+                    <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$barang->id_barang}}" href="{{URL::to('/barang/'.$barang->id_barang)}}" method="get">
+                    <em class="fa fa-pencil"></em></a></div>
+                  <div class="col-sm-4">
+                  <form action="/barang/{{$barang->id_barang}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form></div>
+                  </div>
                   
-                  <form action="/barang/{{$barang->id_barang}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
                 </td>                
                 <td>{{$barang->nama_barang}}</td>
                 <td>{{$barang->harga_barang}}</td>

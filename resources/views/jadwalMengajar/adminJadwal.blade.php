@@ -193,12 +193,16 @@
               @foreach ($jadwal as $jadwals)
               <tr>
                 <td align="center">
+                  <div class="row">
+                    <div class="col-sm-4">
                   <a class="btn btn-default" data-toggle="modal" data-target="#edit-jadwal-{{$jadwals->id_jadwal_mengajar}}">
                     <em class="fa fa-pencil"></em>
-                  </a>
+                  </a></div>
+                  <div class="col-sm-4">
                   <a>
                     <form action="{{URL::to('/jadwal/'.$jadwals->id_jadwal_mengajar)}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
-                  </a>
+                  </a></div>
+                </div>
                 </td>
                 
                 <td>{{ $jadwals->tanggal }} </td>

@@ -138,6 +138,10 @@
                 <form action="{{URL::to('/bantuan/'.$bantuans->id_bantuan).'/update'}}" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
+                  <div class="form-group">
+                      <!-- <label for="nama">Nama Donatur : </label>
+                      <input name="nama_donatur" type="text" class="form-control" id="nama" placeholder="masukkan nama donatur.." value="{{ $bantuans->nama_donatur }}"> -->
+                    </div>
                     <div class="form-group">
                       <label for="nama">Nama Donatur : </label>
                       <input name="nama_donatur" type="text" class="form-control" id="nama" placeholder="masukkan nama donatur.." value="{{ $bantuans->nama_donatur }}">
