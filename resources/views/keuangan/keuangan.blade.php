@@ -84,7 +84,7 @@
             </div>
             <div class="col col-xs-6 text-right">
               <button type="button" class="btn btn-sm btn-primary btn-create" data-toggle="modal" data-target="#add-modal">Create New</button>
-              <button type="button" class="btn btn-sm btn-primary btn-create">Download</button>
+              <button type="button" class="btn btn-sm btn-primary btn-create"><a href="data:application/xml;charset=utf-8,your code here" download="Keuangan.xlsx">Download</a></button>
             </div>
           </div>
         </div>
