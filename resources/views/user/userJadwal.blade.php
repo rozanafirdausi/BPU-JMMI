@@ -61,7 +61,7 @@
           </li>          
           <li><a href="userProfil">Profil</a></li>           
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
   </header>
@@ -200,22 +200,38 @@
           </table>
       
         </div>
+<style>
+.jumlah-data, .paging {
+    width: 50%;
+    height: 50px;
+    display: block;
+}
+
+.jumlah-data {
+    float: left;
+    padding-top: 15px;
+}
+
+.paging {
+    float: right;
+    text-align: right;
+}
+
+.paging ul.pager, .paging ul.pagination {
+    text-align: right;
+}
+
+ul.pagination, ul.pager {
+    margin-top: 8px;
+}
+</style>
         <div class="panel-footer">
           <div class="row">
-            <div class="col col-xs-4">Page 1 of 5
-            </div>
-            <div class="col col-xs-8">
-              <ul class="pagination hidden-xs pull-right">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-              </ul>
-              <ul class="pagination visible-xs pull-right">
-                  <li><a href="#">«</a></li>
-                  <li><a href="#">»</a></li>
-              </ul>
+            <div class="col col-xs-12">
+                <div class="paging">
+                    {{ $jadwal->links() }}
+                </div>
+              </div>
             </div>
           </div>
         </div>

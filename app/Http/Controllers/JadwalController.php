@@ -15,14 +15,14 @@ class JadwalController extends Controller
     public function admin()
     {
     	$desaBinaan = DesaBinaan::all();
-    	$jadwal = Jadwal::all();
+    	$jadwal = Jadwal::paginate(5);
     	return view('jadwalMengajar.adminJadwal', compact('desaBinaan','jadwal'));
     }  
 
     public function user()
     {
     	$desaBinaan = DesaBinaan::all();
-    	$jadwal = Jadwal::all();
+    	$jadwal = Jadwal::paginate(5);
 
     	return view('user.userJadwal', compact('desaBinaan','jadwal'));
     }

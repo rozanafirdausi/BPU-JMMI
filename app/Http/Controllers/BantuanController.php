@@ -16,7 +16,7 @@ class BantuanController extends Controller
      */
     public function index()
     {
-        $bantuan = Bantuan::all();
+        $bantuan = Bantuan::paginate(5);
         return view('bantuan.bantuan',compact('bantuan'));
     }
 

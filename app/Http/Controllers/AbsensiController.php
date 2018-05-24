@@ -15,7 +15,7 @@ class AbsensiController extends Controller
     public function index()
     {
     	$jadwal = Jadwal::all();
-    	$absensi = JadwalAbsensi::all();
+    	$absensi = JadwalAbsensi::paginate(5);
     	foreach ($absensi as $absensis)
     	{
     		$pengurus = JadwalPengurus::where('id_jadwal_mengajar',$absensis->id_jadwal_mengajar)->get();

@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-    	$admin = Admin::all();
+    	$admin = Admin::paginate(5);
     	return view('admin.admin',compact('admin'));
     }
     public function store(Request $request)

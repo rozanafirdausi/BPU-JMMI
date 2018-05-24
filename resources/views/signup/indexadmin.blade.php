@@ -16,12 +16,12 @@
   <div class="form">
       
       <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <!-- <li class="tab active"><a href="#signup">Sign Up</a></li> -->
         <li class="tab"><a href="#login">Log In</a></li>
       </ul>
       
       <div class="tab-content">
-        <div id="signup">   
+        <!-- <div id="signup">   
           <h1>Sign Up for Free</h1>
           
           <form action="{{ action('PagesController@admin') }}" method="post">
@@ -59,14 +59,16 @@
           
           <button type="submit" class="button button-block"/>Get Started</button>
           
-          </form>
+          </form> -->
 
         </div>
         
         <div id="login">   
           <h1>Welcome Back!</h1>
           
-          <form action="/" method="post">
+          <form action="{{ action('PagesController@admin') }}" method="post">
+            {{ csrf_field() }}
+          <input type=hidden name=_token value="{{ csrf_token() }}">
           
             <div class="field-wrap">
             <label>
@@ -84,7 +86,7 @@
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
           
-          <button class="button button-block"/>Log In</button>
+          <button type="submit" class="button button-block"/>Log In</button>
           
           </form>
 

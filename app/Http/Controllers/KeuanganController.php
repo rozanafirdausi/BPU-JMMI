@@ -12,7 +12,7 @@ class KeuanganController extends Controller
 {
 	public function index()
     {
-    	$list_keuangan = Keuangan::all();
+    	$list_keuangan = Keuangan::paginate(5);
     	return view('keuangan.keuangan',compact('list_keuangan'));
     }
     

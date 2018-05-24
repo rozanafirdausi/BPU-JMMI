@@ -65,7 +65,7 @@
           </li>          
           <li><a href="userProfil">Profil</a></li>           
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
   </header>

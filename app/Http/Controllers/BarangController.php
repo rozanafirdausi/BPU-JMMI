@@ -10,7 +10,7 @@ class BarangController extends Controller
 {
     public function index()
     {
-    	$data = Barang::all();
+    	$data = Barang::paginate(5);
     	return view('barang.barang', compact('data'));
     }
 

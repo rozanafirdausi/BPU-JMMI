@@ -56,7 +56,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="/logout">Log Out</a></li>
+          <li><a href="/">Log Out</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->

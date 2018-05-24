@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 use App\Http\Requests;
 use App\DesaBinaan;
@@ -12,7 +14,7 @@ class DesaBinaanController extends Controller
     public function index()
     {
     	// $halaman='desa_binaan';
-    	$desaBinaan = DesaBinaan::all();
+    	$desaBinaan = DesaBinaan::paginate(5);
     	return view('desaBinaan.desaBinaan',compact('desaBinaan'));
     }
     public function store(Request $request)

@@ -49,14 +49,14 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="#hero" style="font-size: 40px">BPU-JMMI<img src="" alt="" title="BPU-JMMI" /></img></a>
+        <a href="#hero" style="font-size: 40px">BPU-JMMI<img src="" alt="" title="BPU-JMMI"></img></a>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Header 1</a></h1>-->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="#contact">Log Out</a></li>
+          <li><a href="/">Log Out</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
