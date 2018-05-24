@@ -46,27 +46,8 @@ class PenjualanController extends Controller
         $data['jumlah_terjual'] = (int)$request->jumlah_terjual;
         $data['id_barang'] = (int)$request->nama_barang;
         Penjualan::create($data);
-
-        // $data = Penjualan::orderBy('id_penjualan', 'desc')->first();
-        // // dd($data);
-        // $penjualanbarang['id_penjualan_barang'] = $data->id_penjualan;
-        // $penjualanbarang['id_barang'] = $data->barang->id_barang;
-        // // $data->barang()->attach($request->input('barang'));
-        // PenjualanBarang::create($penjualanbarang);
         return redirect('penjualan');
-
-        // $data = Barang::list('nama_barang','id_barang');
-        // return view('penjualan.penjualan',compact('data'));
     }
-    // public function store(Request $request)
-    // {
-    //     $absensi['id_jadwal_mengajar'] = $request->id_jadwal_mengajar;
-    //     $absensi['id_absensi'] = 1;
-    //     $absensi['jumlah_warga'] = $request->jumlah_warga;
-
-    //     JadwalAbsensi::create($absensi);
-    //     return redirect('absensi');
-    // }
 
     /**
      * Display the specified resource.
@@ -99,7 +80,15 @@ class PenjualanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Penjualan::where('id_penjualan',$id)->first();
+        $data['id_admin'] = 1;
+        $data['jumlah_terjual'] = (int)$request->jumlah_terjual;
+        $data['id_barang'] = (int)$request->nama_barang;
+        $data->save();
+        return redirect('penjualan');
+        // $data = Penjualan::findOrFail($id);
+        // $data->update($request->all());
+        // return redirect('penjualan');
     }
 
     /**
@@ -110,6 +99,7 @@ class PenjualanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Penjualan::where('id_penjualan',$id)->delete();
+        return back();
     }
 }

@@ -18,7 +18,6 @@ class Penjualan extends Model
 
     public function barang()
     {
-    	// return $this->belongsToMany('App\Barang','transaksipenjualan_barang','id_barang','id_penjualan')->withTimeStamps();
         return $this->belongsTo('App\Barang', 'id_barang');
     }
 }

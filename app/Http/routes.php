@@ -61,6 +61,8 @@ Route::post('/keuangan/{id}/update', 'KeuanganController@update');
 // Route::post('/keuangan', 'KeuanganController@store');
 Route::get('/penjualan', 'PenjualanController@index');
 Route::post('/penjualan', 'PenjualanController@store');
+Route::post('/penjualan/{id_penjualan}/update', 'PenjualanController@update');
+Route::post('/penjualan/{id_penjualan}', 'PenjualanController@destroy');
 
 Route::get('/bantuan', 'BantuanController@index');
 Route::post('/bantuan', 'BantuanController@store');

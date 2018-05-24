@@ -122,7 +122,48 @@
             </div>
           </div>
         </div>
-        <!-- Modal -->
+        <!-- Modal Edit-->
+        @foreach($data as $pb)
+        <div class="modal fade" id="edit-modal-{{$pb->id_penjualan}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Edit Penjualan</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="{{URL::to('/penjualan/'.$pb->id_penjualan).'/update'}}" method="post">
+                  {{ csrf_field() }}
+                  <input type=hidden name=_token value="{{ csrf_token() }}">
+                    <div class="form-group">
+                      <label for="jumlah">Waktu Penjualan : </label>
+                      <input type="text" name="created_at" class="form-control" id="jumlah" placeholder="masukkan waktu terjual.." value="{{$pb->created_at}}">
+                    </div>
+                    <div class="form-group">
+                      <label for="barang">Barang :</label>
+                      <select name="nama_barang" class="form-control" id="exampleFormControlSelect1">
+                        @foreach ($barangs as $barang)
+                        <option value="{{ $barang->id_barang }}">{{ $barang->nama_barang }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="jumlah">Jumlah Terjual : </label>
+                      <input type="text" name="jumlah_terjual" class="form-control" id="jumlah" placeholder="masukkan jumlah terjual.." value="{{$pb->jumlah_terjual}}">
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        @endforeach
+
         <div class="modal fade" id="lihat-barang-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -158,7 +199,7 @@
                 <td align="center">
                   <div class="row">
                     <div class="col-sm-4">
-                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-penjualan-{{$pb->id_penjualan}}">
+                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-modal-{{$pb->id_penjualan}}">
                     <em class="fa fa-pencil"></em></a></div>
                   <div class="col-sm-4">
                     <form action="{{URL::to('/penjualan/'.$pb->id_penjualan)}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form></div>

@@ -17,12 +17,21 @@ class CreateTableTransaksiPenjualan extends Migration
             $table->integer('id_admin')->unsigned();
             $table->timestamps();
             $table->integer('jumlah_terjual');
+            $table->integer('id_barang')->unsigned();
         });
 
         Schema::table('transaksi_penjualan', function (Blueprint $table) {
             $table->foreign('id_admin')
             ->references('id_admin')
             ->on('admin')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+        });
+
+        Schema::table('transaksi_penjualan', function (Blueprint $table) {
+            $table->foreign('id_barang')
+            ->references('id_barang')
+            ->on('barang')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
