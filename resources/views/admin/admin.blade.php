@@ -74,7 +74,7 @@
   
 <body>
   <div id="preloader"></div>
-  <div class="container fluid">
+  <div class="container fluid" style="min-height:500px">
     <h1>Data Admin BPU - JMMI 2018</h1>
     <div class="col-sm-12">
       <div class="panel panel-default panel-table" id="table">

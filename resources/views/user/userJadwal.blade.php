@@ -59,7 +59,7 @@
               <li><a href="userJadwalTerdaftar">Jadwal Mengajar Saya</a></li>
             </ul>
           </li>          
-          <li><a href="">Profil</a></li>           
+          <li><a href="userProfil">Profil</a></li>           
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
@@ -68,7 +68,7 @@
   
 <body>
   <div id="preloader"></div>
-  <div class="container fluid">
+  <div class="container fluid" style="min-height:500px">
     <h1>Jadwal Mengajar BPU - JMMI 2018</h1>
     <div class="col-sm-12">
       <div class="panel panel-default panel-table" id="table">

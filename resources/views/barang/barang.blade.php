@@ -47,7 +47,7 @@
 </head>
 <body>
   <header id="header">
-      <div class="container-fluid">
+      <div class="container-fluid" style="min-height:500px">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">BPU - JMMI</a>
         </div>

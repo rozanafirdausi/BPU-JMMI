@@ -70,12 +70,11 @@
   Services Section
   ============================-->
   <section id="services">
-    <div class="container wow fadeInUp">
+    <div class="container wow fadeInUp" style="min-height:350px">
       <div class="row">
         <div class="col-md-12">
           <h3 class="section-title">Menu User</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">Atlalallalal vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
         </div>
       </div>
 

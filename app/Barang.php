@@ -20,6 +20,7 @@ class Barang extends Model
 
     public function penjualan()
     {
-    	return $this->belongsToMany('App\Penjualan','transaksipenjualan_barang','id_barang','id_penjualan');
+    	// return $this->belongsToMany('App\Penjualan','transaksipenjualan_barang','id_barang','id_penjualan');
+        return $this->hasMany('App\Penjualan', 'id_barang');
     }
 }

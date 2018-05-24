@@ -92,3 +92,7 @@ Route::get('/signupuser', function () {
 Route::get('/signupadmin', function () {
     return view('signup.indexadmin');
 });
+
+Route::get('/userProfil', function () {
+    return view('user.userProfil');
+});

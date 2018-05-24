@@ -74,7 +74,7 @@
   
 <body>
   <div id="preloader"></div>
-  <div class="container fluid">
+  <div class="container fluid" style="min-height:500px">
     <h1>Data Absensi BPU - JMMI 2018</h1>
     <div class="col-sm-12">
       <div class="panel panel-default panel-table" id="table">
@@ -136,7 +136,7 @@
                 </button>
               </div>
               <div class="modal-body"> 
-                <form action="{{URL::to('/absensi/'.$absensis->id_jadwal_mengajar.'/update')}}" method="post">
+                <form action="{{URL::to('/absensi/'.$absensis->id_jadwal_absensi.'/update')}}" method="post">
                   {{ csrf_field() }}
                   <input type=hidden name=_token value="{{ csrf_token() }}">
                     <div class="form-group">
