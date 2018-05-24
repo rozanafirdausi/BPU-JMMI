@@ -70,7 +70,7 @@
   Services Section
   ============================-->
   <section id="services">
-    <div class="container wow fadeInUp">
+    <div class="container wow fadeInUp" style="min-height:500px">
       <div class="row">
         <div class="col-md-12">
           <h3 class="section-title">Menu Admin</h3>
@@ -114,7 +114,14 @@
           <h4 class="service-title"><br>Jadwal Mengajar</h4>
           </a>
           <!-- <p class="service-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p> -->
-        </div></a>
+        </div>
+        <div class="col-md-4 service-item">
+          <a href="kelolaadmin">
+          <div class="service-icon"><i class="fa fa-users"></i></div>
+          <h4 class="service-title"><br>Kelola Admin</h4>
+          </a>
+          <!-- <p class="service-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p> -->
+        </div>
       </div>
     </div>
   </section>

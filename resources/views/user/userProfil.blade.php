@@ -38,6 +38,10 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/table.css" rel="stylesheet">
   <link href="css/keuangan.css" rel="stylesheet">
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <!-- =======================================================
     Theme Name: Imperial
     Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
@@ -61,79 +65,86 @@
           </li>          
           <li><a href="userProfil">Profil</a></li>           
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../BPU-JMMI"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </div>
   </header>
   
 <body>
-  <div id="preloader"></div>
-  <div class="container fluid" style="min-height:500px">
-    <h1>Jadwal Mengajar Saya</h1>
-    <div class="col-sm-12">
-      <div class="panel panel-default panel-table" id="table">
-        <div class="panel-heading">
-          <div class="row">
-            <div class="col col-xs-6">
+  <div class="container">
+      <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+           
+       <br><br><br><br>
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+   
+   
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Profil Pengurus JMMI</h3>
             </div>
-            <div class="col col-xs-6 text-center">
-              <h4></h4>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-1 col-lg-1 " align="center">  </div>
+                
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                <div class=" col-md-10 col-lg-10 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Nama :</td>
+                        <td>Atul</td>
+                      </tr>
+                      <tr>
+                        <td>Email:</td>
+                        <td>atul@gmail.com</td>
+                      </tr>
+                      <tr>
+                        <td>Alamat :</td>
+                        <td>Keputih Perintis I no 36</td>
+                      </tr>                   
+                      <tr>
+                        <tr>
+                        <td>Nomor Telepon :</td>
+                        <td>081231123432</td>
+                      </tr>
+                        <tr>
+                        <td>Jenis Kelamin :</td>
+                        <td>Perempuan</td>
+                      </tr>                     
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-md-1 col-lg-1 " align="center">  </div>
+              </div>
             </div>
+                 <div class="panel-footer">
+                        <!-- <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                        <span class="pull-right">
+                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                        </span> -->
+                        <br>
+                    </div>
+            
           </div>
-        </div>        
-        <div class="panel-body">
-          <table class="table table-striped table-bordered table-list">
-            <thead>
-              <tr>                  
-                  <th>Tanggal</th>
-                  <th>Waktu</th>
-                  <th>Desa Binaan</th>
-                  <th>Tempat</th>
-                  <th><em class="fa fa-cog"></em></th>
-              </tr> 
-            </thead>
-            <tbody>
-            @foreach ($jadwalTerdaftar as $jadwals)
-              <tr>               
-                <td>{{ $jadwals->jadwal->tanggal }} </td>
-                <td>{{ $jadwals->jadwal->waktu }} </td>
-                <td>{{ $jadwals->jadwal->desaBinaan->nama_desa_binaan }}</td>
-                <td>{{ $jadwals->jadwal->tempat }}</td>                           
-                <td align="center">
-                  <a>
-                    <form action="/userJadwalTerdaftar/{{$jadwals->id_jadwal_pengurus}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form>
-                  </a>
-                </td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
-      
         </div>
-        <div class="panel-footer">
-          <div class="row">
-            <div class="col col-xs-4">Page 1 of 5
-            </div>
-            <div class="col col-xs-8">
-              <ul class="pagination hidden-xs pull-right">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-              </ul>
-              <ul class="pagination visible-xs pull-right">
-                  <li><a href="#">«</a></li>
-                  <li><a href="#">»</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>     
-    </div>    
-  </div>
+      </div>
+    </div>
   
-
+<br><br><br>
   <!--==========================
   Footer
 ============================-->

@@ -74,7 +74,7 @@
   
 <body>
   <div id="preloader"></div>
-  <div class="container fluid">
+  <div class="container fluid" style="min-height:500px">
     <h1>Penjualan BPU - JMMI 2018</h1>
     <div class="col-sm-12">
       <div class="panel panel-default panel-table" id="table">
@@ -92,7 +92,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel">Tambah Rincian Bantuan</h3>
+                <h3 class="modal-title" id="exampleModalLabel">Tambah Rincian Penjualan</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -146,7 +146,6 @@
               <tr>
                   <th><em class="fa fa-cog"></em></th>
                   <th>Waktu Penjualan</th>
-                  <!-- <th>Barang</th> -->
                   <th>Nama Barang</th>
                   <th>Harga Barang</th>
                   <th>Harga Jual</th>
@@ -154,18 +153,24 @@
               </tr> 
             </thead>
             <tbody>
+            @foreach ($data as $pb)
               <tr>
                 <td align="center">
-                  <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                  <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                  <div class="row">
+                    <div class="col-sm-4">
+                  <a class="btn btn-default" data-toggle="modal" data-target="#edit-penjualan-{{$pb->id_penjualan}}">
+                    <em class="fa fa-pencil"></em></a></div>
+                  <div class="col-sm-4">
+                    <form action="{{URL::to('/penjualan/'.$pb->id_penjualan)}}" method="POST">{{ csrf_field() }}<button type="submit" class="btn btn-danger"><em class="fa fa-trash"></em></button></form></div>
+                  </div>
                 </td>
-                <td>1 April 2018</td>
-                <td>Pensil</td>
-                <td>12000</td>
-                <td>13000</td>
-                <td>12</td>
+                <td>{{ $pb->created_at}}</td>
+                <td>{{ $pb->barang->nama_barang}}</td>
+                <td>{{ $pb->barang->harga_barang}}</td>
+                <td>{{ $pb->barang->harga_jual}}</td>
+                <td>{{ $pb->jumlah_terjual}}</td>
               </tr>
-              
+              @endforeach
             </tbody>
           </table>
       

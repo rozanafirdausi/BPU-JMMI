@@ -19,7 +19,9 @@ class AbsensiController extends Controller
     	foreach ($absensi as $absensis)
     	{
     		$pengurus = JadwalPengurus::where('id_jadwal_mengajar',$absensis->id_jadwal_mengajar)->get();
+            // dd($absensis->id_jadwal_mengajar);
     	}
+        
     	return view('absensi.absensi', compact('jadwal','absensi','pengurus'));
     }
 
@@ -35,18 +37,19 @@ class AbsensiController extends Controller
 
     public function pengurus($id)
     {
-    	$pengurus = JadwalPengurus::where('id_jadwal_mengajar',$id)->get();    	
+    	$pengurus = JadwalPengurus::where('id_jadwal_mengajar',$id)->get();	
     	return back();
     }
 
     public function update(Request $request, $id)
     {    
     	$absensi = JadwalAbsensi::where('id_jadwal_absensi',$id)->first(); 
+        // dd($id);
     	$absensi['id_jadwal_mengajar'] = $request->id_jadwal_mengajar;
     	$absensi['id_absensi'] = 1;
-    	$absensi['jumlah_warga'] = (int)$request->jumlah_warga;
+    	$absensi['jumlah_warga'] = $request->jumlah_warga;
 
-    	($absensi)->save();
+    	$absensi->save();
     	return redirect('absensi');
     }
 

@@ -47,7 +47,7 @@
 </head>
 <body>
   <header id="header">
-      <div class="container-fluid">
+      <div class="container-fluid" style="min-height:500px">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">BPU - JMMI</a>
         </div>
@@ -170,7 +170,7 @@
             <thead>
               <tr>
                   <!-- <th><em class="fa fa-cog"></em></th> -->
-                  <th>Nama Donatur</th>
+                  <th style="width:350px; text-align:left;">Nama Donatur</th>
                   <th>Jenis Donasi</th>
                   <th>Jumlah Donasi</th>
               </tr> 

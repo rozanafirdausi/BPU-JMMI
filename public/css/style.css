@@ -853,7 +853,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  position: fixed;
+  /*position: fixed;*/
   background: #111;
   padding: 30px 0;
   color: #fff;
@@ -872,3 +872,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #ccc;
 }
 
+body > div > .container > .fluid {
+  min-height: 500px !important;
+}
